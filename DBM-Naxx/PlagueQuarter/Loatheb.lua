@@ -75,8 +75,6 @@ function mod:SPELL_CAST_SUCCESS(args)
 		if mod:IsDifficulty("normal10") then
 		warnHealSoon:Schedule(14)
 		warnHealNow:Schedule(17)
-		else
-		
 		end
 		timerAura:Start(auraTimer)
 	end
