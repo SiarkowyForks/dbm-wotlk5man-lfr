@@ -142,12 +142,16 @@ L:SetGeneralLocalization({
 
 L:SetWarningLocalization({
 	WarningHealSoon		= "3초 후 힐 가능!!",
-	WarningHealNow		= "지금 힐!!!!!"
+	WarningHealNow		= "지금 힐!!!!!",
+	WarningHealthySporeSoon = "3초 안에 건강한 포자가 생성됩니다",
+	WarningHealthySporeNow = "건강한 포자가 생성됨"
 })
 
 L:SetOptionLocalization({
 	WarningHealSoon		= "힐 시전 사전 경고 보기",
 	WarningHealNow		= "힐 가능 경고 보기",
+	WarningHealthySporeSoon	= "건강한 포자가 생성되기 전에 3초 동안 사전 경고 표시",
+	WarningHealthySporeNow	= "건강한 포자가 생성되면 경고 표시",
 	SporeDamageAlert	= "포자에게 데미지를 주는 공격대원에게 귓속말 보내기 및 알리기\n(공대장 및 경보 권한이 있을 경우)"
 })
 
@@ -283,6 +287,7 @@ L:SetOptionLocalization({
 	WarningWaveSpawned	= "웨이브 생성 경고 보기",
 	WarningRiderDown	= "죽음의 기병이 죽었을 때 경고 보기",
 	WarningKnightDown	= "죽음의 기사가 죽었을 때 경고 보기",
+	WarningTraineeDown	= "죽음의 연습생 죽었을 때 경고 보기",
 	WarningPhase2		= "2 페이즈 경고 보기"
 })
 
@@ -296,6 +301,7 @@ L:SetWarningLocalization({
 	WarningWaveSpawned	= "웨이브 %d: %s 등장",
 	WarningRiderDown	= "무자비한 죽음의 기병 죽음",
 	WarningKnightDown	= "무자비한 죽음의 기사 죽음",
+	WarningTraineeDown	= "무자비한 죽음의 연습생 죽음",
 	WarningPhase2		= "2 페이즈 시작"
 })
 

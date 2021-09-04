@@ -141,12 +141,16 @@ L:SetGeneralLocalization({
 
 L:SetWarningLocalization({
    WarningHealSoon      = "Heilung in 3 Sek möglich",
-   WarningHealNow      = "Jetzt heilen"
+   WarningHealNow      = "Jetzt heilen",
+   WarningHealthySporeSoon = "Gesunde Sporen spawnen in 3 Sekunden",
+	WarningHealthySporeNow = "Gesunde Sporen gelaicht"
 })
 
 L:SetOptionLocalization({
 	WarningHealSoon		= "Zeige Vorwarnung für 3-Sekunden-Heilfenster",
 	WarningHealNow		= "Zeige Warnung für 3-Sekunden-Heilfenster",
+   WarningHealthySporeSoon	= "Zeige Vorwarnung für 3 Sekunden anzeigen, bevor gesunde Sporen erscheinen",
+	WarningHealthySporeNow	= "Zeuge Warnung anzeigen, wenn gesunde Sporen erscheinen",
 	SporeDamageAlert	= "Sende Flüsternachricht und verkünde Spieler in Raid die Sporen beschädigen\n(benötigt aktivierte Ankündigungen und (L)- oder (A)-Status)"
 })
 
@@ -274,7 +278,8 @@ L:SetOptionLocalization({
    WarningWaveSoon      = "Zeige Vorwarnung für die Wellen",
    WarningWaveSpawned   = "Zeige Warnung für gespawnte Wellen",
    WarningRiderDown   = "Zeige Warnung wenn ein Unerbittlicher Reiter stirbt",
-   WarningKnightDown   = "Zeige Warnung wenn ein Unerbittlicher Todesritter stirbt"
+   WarningKnightDown   = "Zeige Warnung wenn ein Unerbittlicher Todesritter stirbt",
+   WarningTraineeDown	= "eige Warnung wenn ein Unerbittlicher Auszubildender stirbt"
 })
 
 L:SetTimerLocalization({
@@ -287,6 +292,7 @@ L:SetWarningLocalization({
    WarningWaveSpawned   = "Welle %d: %s gespawnt",
    WarningRiderDown   = "Reiter tot",
    WarningKnightDown   = "Ritter tot",
+   WarningTraineeDown	= "Auszubildender tot",
    WarningPhase2      = "Phase 2"
 })
 

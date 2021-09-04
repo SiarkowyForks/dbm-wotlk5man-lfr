@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Loatheb", "DBM-Naxx", 3)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 4443 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4444 $"):sub(12, -3))
 mod:SetCreatureID(16011)
 
 mod:RegisterCombat("combat")
@@ -29,7 +29,7 @@ local timerAura		= mod:NewBuffActiveTimer(17, 55593)
 
 mod:AddBoolOption("SporeDamageAlert", false)
 
-local healthyTimer 	= 15
+local healthyTimer 	= 6
 local doomCounter	= 0
 local sporeTimer	= 36
 
@@ -73,10 +73,12 @@ function mod:SPELL_CAST_SUCCESS(args)
 		timerDoom:Start(timer, doomCounter + 1)
 	elseif args:IsSpellID(55593) then
 		if mod:IsDifficulty("normal10") then
-		warnHealSoon:Schedule(14)
-		warnHealNow:Schedule(17)
+			warnHealSoon:Schedule(14)
+			warnHealNow:Schedule(17)
 		else
-		
+			warnHealthySoon:Schedule(healthyTimer - 3)
+			warnHealthyNow:Schedule(healthyTimer)
+			timerHealthy:Start(healthyTimer)
 		end
 		timerAura:Start(auraTimer)
 	end

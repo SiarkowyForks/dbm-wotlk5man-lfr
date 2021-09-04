@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Gothik", "DBM-Naxx", 4)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 2248 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4444 $"):sub(12, -3))
 mod:SetCreatureID(16060)
 
 mod:RegisterCombat("combat")
@@ -65,7 +65,7 @@ local wavesHeroic = {
 
 local waves = wavesNormal
 local wave = 0
-
+--[[
 local function getWaveString(wave)
 	local waveInfo = waves[wave]
 	if #waveInfo == 2 then
@@ -76,21 +76,24 @@ local function getWaveString(wave)
 		return L.WarningWave3:format(unpack(waveInfo))
 	end
 end
-
+--]]
 function mod:OnCombatStart(delay)
 	if mod:IsDifficulty("heroic25") then
 		waves = wavesHeroic
+		phase2Timer = 300
 	else
 		waves = wavesNormal
+		phase2Timer = 270
 	end
 	wave = 0
-	timerPhase2:Start()
-	warnPhase2:Schedule(270)
+	timerPhase2:Start(phase2Timer)
+	warnPhase2:Schedule(phase2Timer)
 	timerWave:Start(25, wave + 1)
-	warnWaveSoon:Schedule(22, wave + 1, getWaveString(wave + 1))
-	self:ScheduleMethod(25, "NextWave")
+--	warnWaveSoon:Schedule(22, wave + 1, getWaveString(wave + 1))
+--	self:ScheduleMethod(25, "NextWave")
 end
 
+--[[
 function mod:NextWave()
 	wave = wave + 1
 	warnWaveNow:Show(wave, getWaveString(wave))
@@ -101,7 +104,7 @@ function mod:NextWave()
 		self:ScheduleMethod(next, "NextWave")
 	end
 end
-
+--]]
 function mod:UNIT_DIED(args)
 	if bit.band(args.destGUID:sub(0, 5), 0x00F) == 3 then
 		local guid = tonumber(args.destGUID:sub(9, 12), 16)

@@ -135,12 +135,16 @@ L:SetGeneralLocalization({
 
 L:SetWarningLocalization({
 	WarningHealSoon	= "Исцеление через 3 секунды",
-	WarningHealNow	= "Исцеление"
+	WarningHealNow	= "Исцеление",
+	WarningHealthySporeSoon = "Здоровые споры появляются за 3 секунды",
+	WarningHealthySporeNow = "Появилась здоровая спора"
 })
 
 L:SetOptionLocalization({
 	WarningHealSoon		= "Предупреждать перед следующим исцелением",
 	WarningHealNow		= "Предупреждение для исцеления",
+	WarningHealthySporeSoon	= "Показывать предварительное предупреждение за 3 секунды до появления здоровых спор",
+	WarningHealthySporeNow	= "Показывать предупреждение при появлении здоровых спор",
 	SporeDamageAlert	= "Сообщать шепотом и объявлять в рейд игроков, наносящих урон спорам\n(требуются права лидера или помощника)"
 })
 
@@ -268,7 +272,8 @@ L:SetOptionLocalization({
 	WarningWaveSoon		= "Предупреждать перед следующей волной",
 	WarningWaveSpawned	= "Предупреждение для волны призыва",
 	WarningRiderDown	= "Предупреждение, когда всадник мертв",
-	WarningKnightDown	= "Предупреждение, когда рыцарь мертв"
+	WarningKnightDown	= "Предупреждение, когда рыцарь мертв",
+	WarningTraineeDown	= "Предупреждение, когда стажер мертв"
 })
 
 L:SetTimerLocalization({
@@ -281,6 +286,7 @@ L:SetWarningLocalization({
 	WarningWaveSpawned	= "Волна %d: %s призван",
 	WarningRiderDown	= "Всадник мертв",
 	WarningKnightDown	= "Рыцарь мертв",
+	WarningTraineeDown	= "стажер мертв",
 	WarningPhase2		= "Фаза 2"
 })
 
