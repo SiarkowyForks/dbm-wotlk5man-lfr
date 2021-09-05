@@ -1,0 +1,64 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Get Changed Files
+        id: changed-files
+        uses: tj-actions/changed-files@v1.1.2
+        with:
+          separator: ":"
+
+      - name: Bump Revision
+        run: |
+          set -x
+
+          # calculate revision increment
+          OLD_REVISION="$(sed -n 's/^DBM_REVISION = "\$Revision: \([0-9]*\) \$"/\1/p' DBM-Core/DBM-Core.lua)"
+          NEW_REVISION="$((OLD_REVISION+1))"
+
+          # replace in modified files
+          echo -n "${{ steps.changed-files.outputs.all_modified_files }}" | tr ':' '\0' \
+            | xargs -0 -I@@ -t sed -i "s/Revision: \([0-9]\+\)/Revision: ${NEW_REVISION}/g" @@
+
+          # replace in `/dbm ver2` if not done already
+          sed -i "s/Revision: \([0-9]\+\)/Revision: ${NEW_REVISION}/g" "DBM-Core/DBM-Core.lua"
+
+      - name: Commit Revision
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Bump revision
+
+      - name: Tag Release
+        id: tag_release
+        uses: mathieudutour/github-tag-action@v5.6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release_branches: ".*"  # drop branch suffix
+          custom_release_rules: feat:patch,fix:patch
+
+      - name: Update Env
+        run: |
+          echo "asset_zip=${GITHUB_REPOSITORY#*/}-${{ steps.tag_release.outputs.new_tag }}.zip" >> $GITHUB_ENV
+
+      - name: Zip Assets
+        run: 7z a -tzip "${{ env.asset_zip }}" "DBM-*/"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.tag_release.outputs.new_tag }}
+          body: ${{ steps.tag_release.outputs.changelog }}
+          files: ${{ env.asset_zip }}
