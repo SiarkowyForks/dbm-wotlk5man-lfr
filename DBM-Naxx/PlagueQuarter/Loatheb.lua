@@ -32,6 +32,8 @@ mod:AddBoolOption("SporeDamageAlert", false)
 local healthyTimer 	= 6
 local doomCounter	= 0
 local sporeTimer	= 36
+local auraTimer		= 17
+local doomTimer		= 120
 
 function mod:OnCombatStart(delay)
 	doomCounter = 0
