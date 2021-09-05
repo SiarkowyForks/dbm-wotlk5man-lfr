@@ -140,12 +140,16 @@ L:SetMiscLocalization({
 L:SetWarningLocalization({
 	WarningHealSoon			= "3秒後可以治療",
 	WarningHealNow			= "現在治療",
+	WarningHealthySporeSoon = "健康孢子在 3 秒內生成",
+	WarningHealthySporeNow = "產生健康孢子",
 	KillSpore			= "你殺死了一個孢子!!!"
 })
 
 L:SetOptionLocalization({
 	WarningHealSoon			= "為3秒後可以治療顯示預先警告",
 	WarningHealNow			= "為現在治療顯示警告",
+	WarningHealthySporeSoon	= "在健康孢子產卵前顯示 3 秒的預警",
+	WarningHealthySporeNow	= "當健康孢子產卵時顯示警告",
 	SporeDamageAlert		= "在團隊中提示誰殺死了孢子並發送密語給兇手\n(需要團隊隊長或助理權限)"
 })
 
@@ -267,12 +271,13 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
-	TimerWave			= "為下一波顯示計時器",
-	TimerPhase2			= "為第二階段顯示計時器",
+	TimerWave				= "為下一波顯示計時器",
+	TimerPhase2				= "為第二階段顯示計時器",
 	WarningWaveSoon			= "為波數顯示預先警告",
 	WarningWaveSpawned		= "為波數出現顯示警告",
 	WarningRiderDown		= "當無情的騎兵死亡時顯示警告",
-	WarningKnightDown		= "當無情的死亡騎士死亡時顯示警告"
+	WarningKnightDown		= "當無情的死亡騎士死亡時顯示警告",
+	WarningTraineeDown		= "當一個不屈不撓的實習生死亡時顯示警告"
 })
 
 L:SetTimerLocalization({
@@ -285,6 +290,7 @@ L:SetWarningLocalization({
 	WarningWaveSpawned		= "第%d波: %s 出現了",
 	WarningRiderDown		= "騎兵已死亡",
 	WarningKnightDown		= "死亡騎士已死亡",
+	WarningTraineeDown		= "實習生死了",
 	WarningPhase2			= "第二階段"
 })
 

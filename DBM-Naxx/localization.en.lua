@@ -133,12 +133,16 @@ L:SetGeneralLocalization({
 
 L:SetWarningLocalization({
 	WarningHealSoon	= "Healing possible in 3 seconds",
-	WarningHealNow	= "Heal now"
+	WarningHealNow	= "Heal now",
+	WarningHealthySporeSoon = "Healthy spore spawns in 3 seconds",
+	WarningHealthySporeNow = "Healthy spore spawned"
 })
 
 L:SetOptionLocalization({
 	WarningHealSoon		= "Show pre-warning for 3-second healing window",
 	WarningHealNow		= "Show warning for 3-second healing window",
+	WarningHealthySporeSoon	= "Show pre-warning for 3-second before Healthy spore spawns",
+	WarningHealthySporeNow	= "Show warning when Healthy spore spawns",
 	SporeDamageAlert	= "Send whisper to and announce to raid players who damage spores\n(requires announce to be enabled and leader/promoted status)"
 })
 
@@ -266,7 +270,8 @@ L:SetOptionLocalization({
 	WarningWaveSoon		= "Show pre-warning for wave",
 	WarningWaveSpawned	= "Show warning for wave spawned",
 	WarningRiderDown	= "Show warning when an Unrelenting Rider dies",
-	WarningKnightDown	= "Show warning when an Unrelenting Death Knight dies"
+	WarningKnightDown	= "Show warning when an Unrelenting Death Knight dies",
+	WarningTraineeDown	= "Show warning when an Unrelenting Trainee dies"
 })
 
 L:SetTimerLocalization({
@@ -279,6 +284,7 @@ L:SetWarningLocalization({
 	WarningWaveSpawned	= "Wave %d: %s spawned",
 	WarningRiderDown	= "Rider down",
 	WarningKnightDown	= "Knight down",
+	WarningTraineeDown	= "Trainee down",
 	WarningPhase2		= "Phase 2"
 })
 

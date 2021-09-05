@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Maexxna", "DBM-Naxx", 1)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 2943 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4444 $"):sub(12, -3))
 mod:SetCreatureID(15952)
 
 mod:RegisterCombat("combat")
@@ -22,12 +22,22 @@ local warnSpidersNow	= mod:NewAnnounce("WarningSpidersNow", 4, 17332)
 local timerWebSpray		= mod:NewNextTimer(40.5, 29484)
 local timerSpider		= mod:NewTimer(30, "TimerSpider", 17332)
 
+local websprayTimer = 45.5
+
 function mod:OnCombatStart(delay)
-	warnWebSpraySoon:Schedule(35.5 - delay)
-	timerWebSpray:Start(40.5 - delay)
-	warnSpidersSoon:Schedule(25 - delay)
-	warnSpidersNow:Schedule(30 - delay)
-	timerSpider:Start(30 - delay)
+	if mod:IsDifficulty("heroic25") then
+		warnWebSpraySoon:Schedule(45.5 - delay)
+		timerWebSpray:Start(50.5 - delay)
+		warnSpidersSoon:Schedule(30 - delay)
+		warnSpidersNow:Schedule(35 - delay)
+		timerSpider:Start(35 - delay)
+	else
+		warnWebSpraySoon:Schedule(35.5 - delay)
+		timerWebSpray:Start(40.5 - delay)
+		warnSpidersSoon:Schedule(25 - delay)
+		warnSpidersNow:Schedule(30 - delay)
+		timerSpider:Start(30 - delay)
+	end
 end
 
 function mod:OnCombatEnd(wipe)
@@ -49,9 +59,14 @@ end
 
 function mod:SPELL_CAST_SUCCESS(args)
 	if args:IsSpellID(29484, 54125) then -- Web Spray
+		if mod:IsDifficulty("heroic25") then
+			warnWebSpraySoon:Schedule(40.5)
+			timerWebSpray:Start(websprayTimer)
+		else
+			warnWebSpraySoon:Schedule(35.5)
+			timerWebSpray:Start()
+		end
 		warnWebSprayNow:Show()
-		warnWebSpraySoon:Schedule(35.5)
-		timerWebSpray:Start()
 		warnSpidersSoon:Schedule(25)
 		warnSpidersNow:Schedule(30)
 		timerSpider:Start()

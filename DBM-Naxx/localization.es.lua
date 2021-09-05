@@ -139,12 +139,16 @@ L:SetGeneralLocalization({
 
 L:SetWarningLocalization({
 	WarningHealSoon		= "Curar en 3 segundos",
-	WarningHealNow		= "¡Curar Ahora!"
+	WarningHealNow		= "¡Curar Ahora!",
+	WarningHealthySporeSoon = "Las esporas sanas se generan en 3 segundos.",
+	WarningHealthySporeNow = "Generación de esporas saludables"
 })
 
 L:SetOptionLocalization({
 	WarningHealSoon		= "Mostrar pre-aviso para \"Curar en 3 segudos\" ",
 	WarningHealNow		= "Mostrar aviso para \"Curar Ahora\" ",
+	WarningHealthySporeSoon	= "Mostrar advertencia previa durante 3 segundos antes de que aparezcan las esporas saludables",
+	WarningHealthySporeNow	= "Mostrar advertencia cuando se generan esporas sanas",
 	SporeDamageAlert	= "Enviar susurros y avisar a la banda de los jugadores que estén dañando esporas\n (necesita 'anunciar' activado y lider/ayudante)"
 })
 
@@ -275,7 +279,8 @@ L:SetOptionLocalization({
 	WarningWaveSoon		= "Mostrar pre-aviso para Oleadas",
 	WarningWaveSpawned	= "Mostrar aviso para Oleadas",
 	WarningRiderDown	= "Mostrar aviso cuando un Jinete muere",
-	WarningKnightDown	= "Mostrar aviso cuando un Caballero muere"
+	WarningKnightDown	= "Mostrar aviso cuando un Caballero muere",
+	WarningTraineeDown	= "Mostrar aviso cuando un Aprendiz muere"
 })
 
 L:SetTimerLocalization({
@@ -288,6 +293,7 @@ L:SetWarningLocalization({
 	WarningWaveSpawned	= "Oleada %d: %s empezó",
 	WarningRiderDown	= "Jinete muerto",
 	WarningKnightDown	= "Caballero muerto",
+	WarningTraineeDown	= "Aprendiz muerto",
 	WarningPhase2		= "Fase 2"
 })
 

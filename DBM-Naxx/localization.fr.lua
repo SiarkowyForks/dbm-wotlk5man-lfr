@@ -135,12 +135,16 @@ L:SetGeneralLocalization({
 
 L:SetWarningLocalization({
 	WarningHealSoon		= "Soins possibles dans 3 sec",
-	WarningHealNow		= "SOIGNEZ MAINTENANT!"
+	WarningHealNow		= "SOIGNEZ MAINTENANT!",
+	WarningHealthySporeSoon = "Des spores saines apparaissent en 3 secondes",
+	WarningHealthySporeNow = "Spore saine engendrée"
 })
 
 L:SetOptionLocalization({
 	WarningHealSoon		= "Activer l'avertissement \"Soins dans 3 sec\" ",
-	WarningHealNow		= "Activer l'avertissement \"SOIGNEZ MAINTENANT\" "
+	WarningHealNow		= "Activer l'avertissement \"SOIGNEZ MAINTENANT\" ",
+	WarningHealthySporeSoon	= "Afficher un avertissement pendant 3 secondes avant que des spores saines n'apparaissent",
+	WarningHealthySporeNow	= "Afficher un avertissement lorsque des spores saines apparaissent"
 })
 
 -----------------
@@ -268,6 +272,7 @@ L:SetOptionLocalization({
 	WarningWaveSpawned	= "Avertir quand une vague est arrivée",
 	WarningRiderDown	= "Avertir quand un Cavalier meurt",
 	WarningKnightDown	= "Avertir quand un Chevalier meurt",
+	WarningTraineeDown	= "Avertir quand un Stagiaire meurt"
 	WarningPhase2		= "Activer l'avertissement pour la Phase 2"
 })
 
@@ -281,6 +286,7 @@ L:SetWarningLocalization({
 	WarningWaveSpawned	= "Vague %d: %s arrivée",
 	WarningRiderDown	= "Cavalier down",
 	WarningKnightDown	= "Chevalier down",
+	WarningTraineeDown	= "Stagiaire down",
 	WarningPhase2		= "Phase 2"
 })
 
