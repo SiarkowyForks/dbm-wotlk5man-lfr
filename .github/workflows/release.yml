@@ -39,7 +39,7 @@ jobs:
       - name: Commit Revision
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Bump revision
+          commit_message: chore: Bump revision
 
       - name: Tag Release
         id: tag_release
