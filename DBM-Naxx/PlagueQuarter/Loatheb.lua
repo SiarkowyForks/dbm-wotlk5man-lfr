@@ -11,7 +11,8 @@ mod:EnableModel()
 mod:RegisterEvents(
 	"SPELL_CAST_SUCCESS",
 	"SPELL_DAMAGE",
-	"SWING_DAMAGE"
+	"SWING_DAMAGE",
+	"UNIT_DIED"
 )
 
 local warnSporeNow		= mod:NewSpellAnnounce(32329, 2)
@@ -83,6 +84,15 @@ function mod:SPELL_CAST_SUCCESS(args)
 			timerHealthy:Start(healthyTimer)
 		end
 		timerAura:Start(auraTimer)
+	end
+end
+
+function mod:UNIT_DIED(args)
+	if bit.band(args.destGUID:sub(0, 5), 0x00F) == 3 then
+		local guid = tonumber(args.destGUID:sub(9, 12), 16)
+		if guid == 500002 then -- Spore
+			warnHealNow:Show()
+		end
 	end
 end
 

@@ -178,11 +178,13 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	SpecialWarningInjection		= "Cпец-предупреждение для Мутагенного укола",
-	SetIconOnInjectionTarget	= "Устанавливать метки на цели заклинания Мутагенный укол"
+	SetIconOnInjectionTarget	= "Устанавливать метки на цели заклинания Мутагенный укол",
+	WarningFalloutSlime			= "Показывать предупреждение при появлении Выпадение слизи"
 })
 
 L:SetWarningLocalization({
-	SpecialWarningInjection	= "Вам сделали мутагенный укол."
+	SpecialWarningInjection	= "Вам сделали мутагенный укол.",
+	WarningFalloutSlime		= "Выпадение слизи появился"
 })
 
 L:SetTimerLocalization({
@@ -269,16 +271,19 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave			= "Отсчет времени до волны",
 	TimerPhase2			= "Отсчет времени до фазы 2",
+	TimerTeleport		= "Отсчет времени до телепортации",
 	WarningWaveSoon		= "Предупреждать перед следующей волной",
 	WarningWaveSpawned	= "Предупреждение для волны призыва",
 	WarningRiderDown	= "Предупреждение, когда всадник мертв",
 	WarningKnightDown	= "Предупреждение, когда рыцарь мертв",
-	WarningTraineeDown	= "Предупреждение, когда стажер мертв"
+	WarningTraineeDown	= "Предупреждение, когда стажер мертв",
+	WarningTeleportSoon	= "Предупреждать перед следующей телепортацией"
 })
 
 L:SetTimerLocalization({
-	TimerWave	= "Волна %d",
-	TimerPhase2	= "Фаза 2"
+	TimerWave			= "Волна %d",
+	TimerPhase2			= "Фаза 2",
+	TimerTeleport		= "Телепортация"
 })
 
 L:SetWarningLocalization({
@@ -287,7 +292,8 @@ L:SetWarningLocalization({
 	WarningRiderDown	= "Всадник мертв",
 	WarningKnightDown	= "Рыцарь мертв",
 	WarningTraineeDown	= "стажер мертв",
-	WarningPhase2		= "Фаза 2"
+	WarningPhase2		= "Фаза 2",
+	WarningTeleportSoon	= "Телепортация через 3 секунд"
 })
 
 L:SetMiscLocalization({
@@ -348,6 +354,7 @@ L:SetOptionLocalization({
 	TimerLanding		= "Отсчет времени до приземления",
 	TimerIceBlast		= "Отсчет времени до Ледяного дыхания",
 	WarningDeepBreath	= "Специальное объявление Ледяного Дыхания",
+	WarningFrozenOrb	= "Показать предупреждение для Замороженная сфера",
 	WarningIceblock		= "Кричать, когда вы в Ледяной глыбе"
 })
 
@@ -360,12 +367,14 @@ L:SetWarningLocalization({
 	WarningAirPhaseSoon	= "Воздушная фаза через 10 секунд",
 	WarningAirPhaseNow	= "Воздушная фаза",
 	WarningLanded		= "Сапфирон приземляется",
+	WarningFrozenOrb	= "Замороженная сфера",
 	WarningDeepBreath	= "Ледяное дыхание"
 })
 
 L:SetTimerLocalization({
 	TimerAir		= "Воздушная фаза",
 	TimerLanding	= "Приземление",
+	TimerFrozenOrb	= "Замороженная сфера",
 	TimerIceBlast	= "Ледяное дыхание"	
 })
 

@@ -188,11 +188,13 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	SpecialWarningInjection		= "돌연변이 유발 특수 경고 보기",
-	SetIconOnInjectionTarget	= "돌연변이 유발 대상 공격대 아이콘 설정"
+	SetIconOnInjectionTarget	= "돌연변이 유발 대상 공격대 아이콘 설정",
+	WarningFalloutSlime			= "낙진 슬라임 생성 시 경고 표시"
 })
 
 L:SetWarningLocalization({
-	SpecialWarningInjection		= "당신에게 돌연변이 유발!!"
+	SpecialWarningInjection		= "당신에게 돌연변이 유발!!",
+	WarningFalloutSlime		= "낙진 슬라임 생성"
 })
 
 L:SetTimerLocalization({
@@ -283,17 +285,20 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave			= "다음 웨이브 타이머 보기",
 	TimerPhase2			= "2 페이즈 타이머 보기",
+	TimerTeleport		= "순간이동 타이머 보기",
 	WarningWaveSoon		= "웨이브 사전 경고 보기",
 	WarningWaveSpawned	= "웨이브 생성 경고 보기",
 	WarningRiderDown	= "죽음의 기병이 죽었을 때 경고 보기",
 	WarningKnightDown	= "죽음의 기사가 죽었을 때 경고 보기",
 	WarningTraineeDown	= "죽음의 연습생 죽었을 때 경고 보기",
-	WarningPhase2		= "2 페이즈 경고 보기"
+	WarningPhase2		= "2 페이즈 경고 보기",
+	WarningTeleportSoon	= "순간이동 사전 경고 보기"
 })
 
 L:SetTimerLocalization({
 	TimerWave	= "웨이브 #%d",
-	TimerPhase2	= "2 페이즈"
+	TimerPhase2	= "2 페이즈",
+	TimerTeleport		= "순간이동"
 })
 
 L:SetWarningLocalization({
@@ -302,7 +307,8 @@ L:SetWarningLocalization({
 	WarningRiderDown	= "무자비한 죽음의 기병 죽음",
 	WarningKnightDown	= "무자비한 죽음의 기사 죽음",
 	WarningTraineeDown	= "무자비한 죽음의 연습생 죽음",
-	WarningPhase2		= "2 페이즈 시작"
+	WarningPhase2		= "2 페이즈 시작",
+	WarningTeleportSoon	= "3초 후 순간이동"
 })
 
 L:SetMiscLocalization({
@@ -368,6 +374,7 @@ L:SetOptionLocalization({
 	TimerLanding			= "착지 타이머 보기",
 	TimerIceBlast			= "냉기 숨결 타이머 보기",
 	WarningDeepBreath		= "냉기 숨결 특수 경고 보기",
+	WarningFrozenOrb		= "얼어붙은 구에 대한 경고 표시",
 	WarningIceblock			= "얼음 방패가 됐을 경우 외치기"
 })
 
@@ -381,12 +388,14 @@ L:SetWarningLocalization({
 	WarningAirPhaseSoon		= "비행 페이즈 10초 전",
 	WarningAirPhaseNow		= "비행 페이즈",
 	WarningLanded			= "사피론 착지",
+	WarningFrozenOrb		= "얼어붙은 구",
 	WarningDeepBreath		= "냉기의 숨결!!",
 })
 
 L:SetTimerLocalization({
 	TimerAir				= "비행 페이즈",
 	TimerLanding			= "착지",
+	TimerFrozenOrb			= "얼어붙은 구",
 	TimerIceBlast			= "냉기 숨결"	
 })
 

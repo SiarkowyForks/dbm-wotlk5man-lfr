@@ -182,11 +182,14 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
-	SpecialWarningInjection		= "當你中了突變注射時顯示特別警告"
+	SpecialWarningInjection		= "當你中了突變注射時顯示特別警告",
+	SetIconOnInjectionTarget	= "在突变的注射目标上设置图标",
+	WarningFalloutSlime			= "当辐射史莱姆出现时显示警告"
 })
 
 L:SetWarningLocalization({
-	SpecialWarningInjection		= "你中了突變注射 - 快跑開"
+	SpecialWarningInjection		= "你中了突變注射 - 快跑開",
+	WarningFalloutSlime			= "辐射史莱姆生成"
 })
 
 L:SetTimerLocalization({
@@ -273,16 +276,19 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave				= "為下一波顯示計時器",
 	TimerPhase2				= "為第二階段顯示計時器",
+	TimerTeleport			= "為傳送顯示計時器",
 	WarningWaveSoon			= "為波數顯示預先警告",
 	WarningWaveSpawned		= "為波數出現顯示警告",
 	WarningRiderDown		= "當無情的騎兵死亡時顯示警告",
 	WarningKnightDown		= "當無情的死亡騎士死亡時顯示警告",
-	WarningTraineeDown		= "當一個不屈不撓的實習生死亡時顯示警告"
+	WarningTraineeDown		= "當一個不屈不撓的實習生死亡時顯示警告",
+	WarningTeleportSoon		= "為傳送顯示預先警告"
 })
 
 L:SetTimerLocalization({
 	TimerWave			= "第 %d 波",
-	TimerPhase2			= "第2階段"
+	TimerPhase2			= "第2階段",
+	TimerTeleport		= "傳送"
 })
 
 L:SetWarningLocalization({
@@ -291,7 +297,8 @@ L:SetWarningLocalization({
 	WarningRiderDown		= "騎兵已死亡",
 	WarningKnightDown		= "死亡騎士已死亡",
 	WarningTraineeDown		= "實習生死了",
-	WarningPhase2			= "第二階段"
+	WarningPhase2			= "第二階段",
+	WarningTeleportSoon		= "3秒後 傳送"
 })
 
 L:SetMiscLocalization({
@@ -352,6 +359,7 @@ L:SetOptionLocalization({
 	TimerLanding			= "為降落顯示計時器",
 	TimerIceBlast			= "為冰息術顯示計時器",
 	WarningDeepBreath		= "為冰息術顯示特別警告",
+	WarningFrozenOrb		= "顯示冰凍寶珠的警告",
 	WarningIceblock			= "當你中了冰箱時大喊",
 })
 
@@ -364,12 +372,14 @@ L:SetWarningLocalization({
 	WarningAirPhaseSoon		= "10秒後 空中階段",
 	WarningAirPhaseNow		= "空中階段",
 	WarningLanded			= "薩菲隆降落了",
+	WarningFrozenOrb		= "冰冻的球体",
 	WarningDeepBreath		= "冰息術"
 })
 
 L:SetTimerLocalization({
 	TimerAir			= "空中階段",
 	TimerLanding			= "降落",
+	TimerFrozenOrb			= "冰冻的球体",
 	TimerIceBlast			= "冰息術"	
 })
 

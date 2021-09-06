@@ -134,15 +134,15 @@ L:SetGeneralLocalization({
 L:SetWarningLocalization({
 	WarningHealSoon	= "Healing possible in 3 seconds",
 	WarningHealNow	= "Heal now",
-	WarningHealthySporeSoon = "Healthy spore spawns in 3 seconds",
-	WarningHealthySporeNow = "Healthy spore spawned"
+	WarningHealthySporeSoon = "Healthy Spore spawns in 3 seconds",
+	WarningHealthySporeNow = "Healthy Spore spawned"
 })
 
 L:SetOptionLocalization({
 	WarningHealSoon		= "Show pre-warning for 3-second healing window",
 	WarningHealNow		= "Show warning for 3-second healing window",
-	WarningHealthySporeSoon	= "Show pre-warning for 3-second before Healthy spore spawns",
-	WarningHealthySporeNow	= "Show warning when Healthy spore spawns",
+	WarningHealthySporeSoon	= "Show pre-warning for 3-second before Healthy Spore spawns",
+	WarningHealthySporeNow	= "Show warning when Healthy Spore spawns",
 	SporeDamageAlert	= "Send whisper to and announce to raid players who damage spores\n(requires announce to be enabled and leader/promoted status)"
 })
 
@@ -176,11 +176,13 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	SpecialWarningInjection		= "Show special warning when you are affected by Mutating Injection",
-	SetIconOnInjectionTarget	= "Set icons on Mutating Injection targets"
+	SetIconOnInjectionTarget	= "Set icons on Mutating Injection targets",
+	WarningFalloutSlime			= "Show warning when Fallout Slime spawns"
 })
 
 L:SetWarningLocalization({
-	SpecialWarningInjection	= "Mutating Injection on you"
+	SpecialWarningInjection	= "Mutating Injection on you",
+	WarningFalloutSlime		= "Fallout Slime spawned"
 })
 
 L:SetTimerLocalization({
@@ -267,16 +269,19 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave			= "Show timer for next wave",
 	TimerPhase2			= "Show timer for Phase 2",
+	TimerTeleport		= "Show timer for Teleport",
 	WarningWaveSoon		= "Show pre-warning for wave",
 	WarningWaveSpawned	= "Show warning for wave spawned",
 	WarningRiderDown	= "Show warning when an Unrelenting Rider dies",
 	WarningKnightDown	= "Show warning when an Unrelenting Death Knight dies",
-	WarningTraineeDown	= "Show warning when an Unrelenting Trainee dies"
+	WarningTraineeDown	= "Show warning when an Unrelenting Trainee dies",
+	WarningTeleportSoon	= "Show pre-warning for Teleport"
 })
 
 L:SetTimerLocalization({
 	TimerWave	= "Wave %d",
-	TimerPhase2	= "Phase 2"
+	TimerPhase2	= "Phase 2",
+	TimerTeleport	= "Teleport"
 })
 
 L:SetWarningLocalization({
@@ -285,7 +290,8 @@ L:SetWarningLocalization({
 	WarningRiderDown	= "Rider down",
 	WarningKnightDown	= "Knight down",
 	WarningTraineeDown	= "Trainee down",
-	WarningPhase2		= "Phase 2"
+	WarningPhase2		= "Phase 2",
+	WarningTeleportSoon	= "Teleport in 3 seconds"
 })
 
 L:SetMiscLocalization({
@@ -346,6 +352,7 @@ L:SetOptionLocalization({
 	TimerLanding		= "Show timer for landing",
 	TimerIceBlast		= "Show timer for Frost Breath",
 	WarningDeepBreath	= "Show special warning for Frost Breath",
+	WarningFrozenOrb	= "Show warning for Frozen Orb",
 	WarningIceblock		= "Yell on Ice Block"
 })
 
@@ -358,12 +365,14 @@ L:SetWarningLocalization({
 	WarningAirPhaseSoon	= "Air phase in 10 seconds",
 	WarningAirPhaseNow	= "Air phase",
 	WarningLanded		= "Sapphiron landed",
+	WarningFrozenOrb	= "Frozen Orb",
 	WarningDeepBreath	= "Frost Breath"
 })
 
 L:SetTimerLocalization({
 	TimerAir		= "Air phase",
 	TimerLanding	= "Landing",
+	TimerFrozenOrb	= "Frozen Orb",
 	TimerIceBlast	= "Frost Breath"	
 })
 

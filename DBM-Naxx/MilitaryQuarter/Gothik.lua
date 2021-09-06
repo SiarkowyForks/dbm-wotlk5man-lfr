@@ -7,17 +7,21 @@ mod:SetCreatureID(16060)
 mod:RegisterCombat("combat")
 
 mod:RegisterEvents(
-	"UNIT_DIED"
+	"UNIT_DIED",
+	"UNIT_HEALTH"
 )
 
 local warnWaveNow		= mod:NewAnnounce("WarningWaveSpawned", 3, nil, false)
 local warnWaveSoon		= mod:NewAnnounce("WarningWaveSoon", 1)
 local warnRiderDown		= mod:NewAnnounce("WarningRiderDown", 4)
 local warnKnightDown	= mod:NewAnnounce("WarningKnightDown", 2)
+local warnTraineeDown 	= mod:NewAnnounce("WarningTraineeDown", 2)
 local warnPhase2		= mod:NewPhaseAnnounce(2, 4)
+local warnTeleportSoon	= mod:NewAnnounce("WarningTeleportSoon", 3)
 
 local timerPhase2		= mod:NewTimer(270, "TimerPhase2", 27082) 
 local timerWave			= mod:NewTimer(20, "TimerWave", 27082)
+local timerTeleport 	= mod:NewTimer(20, "TimerTeleport", 1953)
 
 local wavesNormal = {
 	{2, L.Trainee, next = 20},
@@ -89,6 +93,7 @@ function mod:OnCombatStart(delay)
 	timerPhase2:Start(phase2Timer)
 	warnPhase2:Schedule(phase2Timer)
 	timerWave:Start(25, wave + 1)
+	self:ScheduleMethod(phase2Timer, "TeleportLoop")
 --	warnWaveSoon:Schedule(22, wave + 1, getWaveString(wave + 1))
 --	self:ScheduleMethod(25, "NextWave")
 end
@@ -104,6 +109,20 @@ end
 --		self:ScheduleMethod(next, "NextWave")
 --	end
 -- end
+
+function mod:TeleportLoop()
+	timerTeleport:Start()
+	warnTeleportSoon:Schedule(17)
+	self:ScheduleMethod(20, "TeleportLoop")
+end
+
+function mod:UNIT_HEALTH(uId)
+	if self:GetUnitCreatureId(uId) == 16060 and UnitHealth(uId) / UnitHealthMax(uId) <= 0.30 then
+		self:UnscheduleMethod("TeleportLoop")
+		self:Unschedule("warnTeleportSoon")
+		self:Stop("TimerTeleport")
+	end
+end
 
 function mod:UNIT_DIED(args)
 	if bit.band(args.destGUID:sub(0, 5), 0x00F) == 3 then

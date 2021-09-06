@@ -183,11 +183,13 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	SpecialWarningInjection	= "Mostrar aviso especial si te afecta Inyección mutante",
-	SetIconOnInjectionTarget	= "Poner iconos en los objetivos de Inyección mutante"
+	SetIconOnInjectionTarget	= "Poner iconos en los objetivos de Inyección mutante",
+	WarningFalloutSlime			= "Mostrar advertencia cuando aparece Babe de lluvia"
 })
 
 L:SetWarningLocalization({
-	SpecialWarningInjection	= "Inyección mutante en ti!"
+	SpecialWarningInjection	= "Inyección mutante en ti!",
+	WarningFalloutSlime		= "El limo de las cataratas ha aparecido"
 })
 
 L:SetTimerLocalization({
@@ -276,16 +278,19 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave			= "Mostrar tiempo de Oleadas",
 	TimerPhase2			= "Mostrar tiempo para Fase 2",
+	TimerTeleport		= "Mostrar tiempo de Teletransporte",
 	WarningWaveSoon		= "Mostrar pre-aviso para Oleadas",
 	WarningWaveSpawned	= "Mostrar aviso para Oleadas",
 	WarningRiderDown	= "Mostrar aviso cuando un Jinete muere",
 	WarningKnightDown	= "Mostrar aviso cuando un Caballero muere",
-	WarningTraineeDown	= "Mostrar aviso cuando un Aprendiz muere"
+	WarningTraineeDown	= "Mostrar aviso cuando un Aprendiz muere",
+	WarningTeleportSoon	= "Mostrar aviso antes de que se Teletransporte"
 })
 
 L:SetTimerLocalization({
 	TimerWave	= "Oleada #%d",
-	TimerPhase2	= "Fase 2"
+	TimerPhase2	= "Fase 2",
+	TimerTeleport	= "Teletransporte"
 })
 
 L:SetWarningLocalization({
@@ -294,7 +299,8 @@ L:SetWarningLocalization({
 	WarningRiderDown	= "Jinete muerto",
 	WarningKnightDown	= "Caballero muerto",
 	WarningTraineeDown	= "Aprendiz muerto",
-	WarningPhase2		= "Fase 2"
+	WarningPhase2		= "Fase 2",
+	WarningTeleportSoon	= "Teletransporte en 3 seg"
 })
 
 L:SetMiscLocalization({
@@ -357,6 +363,7 @@ L:SetOptionLocalization({
 	TimerLanding			= "Mostrar tiempo para Fase en el Suelo",
 	TimerIceBlast			= "Mostrar tiempo para Respira Hondo",
 	WarningDeepBreath		= "Mostrar aviso especial para Respira Hondo",
+	WarningFrozenOrb		= "Mostrar advertencia para Orbe congelado",
 	WarningIceblock			= "Gritar en Bloque de hielo"
 })
 
@@ -369,12 +376,14 @@ L:SetWarningLocalization({
 	WarningAirPhaseSoon		= "Fase Aerea en 10 seg",
 	WarningAirPhaseNow		= "Fase Aerea",
 	WarningLanded			= "Sapphiron aterrizo",
-	WarningDeepBreath		= "Respira hondo!",
+	WarningFrozenOrb		= "Orbe congelado",
+	WarningDeepBreath		= "Respira hondo!"
 })
 
 L:SetTimerLocalization({
 	TimerAir				= "Fase Aerea",
 	TimerLanding			= "Aterriza en",
+	TimerFrozenOrb			= "Orbe congelado",
 	TimerIceBlast			= "Respira Hondo"	
 })
 

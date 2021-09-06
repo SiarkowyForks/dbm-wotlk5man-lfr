@@ -184,11 +184,13 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
    SpecialWarningInjection   = "Zeige Spezialwarnung wenn du Ziel der Mutagenen Injektion bist",
-   SetIconOnInjectionTarget	= "Setze Zeichen auf Ziele von Mutagene Injektion"
+   SetIconOnInjectionTarget	= "Setze Zeichen auf Ziele von Mutagene Injektion",
+   WarningFalloutSlime			= "Warnung anzeigen, wenn Fallout-Schleim spawnen"
 })
 
 L:SetWarningLocalization({
-   SpecialWarningInjection   = "Mutagene Injektion auf dir"
+   SpecialWarningInjection   = "Mutagene Injektion auf dir",
+   WarningFalloutSlime		= "Fallout-Schleim gelaicht"
 })
 
 L:SetTimerLocalization({
@@ -275,16 +277,19 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
    TimerWave         = "Zeige Timer für nächste Welle",
    TimerPhase2         = "Zeige Timer für Phase 2",
+   TimerTeleport		= "Zeige Timer für Teleport",
    WarningWaveSoon      = "Zeige Vorwarnung für die Wellen",
    WarningWaveSpawned   = "Zeige Warnung für gespawnte Wellen",
    WarningRiderDown   = "Zeige Warnung wenn ein Unerbittlicher Reiter stirbt",
    WarningKnightDown   = "Zeige Warnung wenn ein Unerbittlicher Todesritter stirbt",
-   WarningTraineeDown	= "eige Warnung wenn ein Unerbittlicher Auszubildender stirbt"
+   WarningTraineeDown	= "eige Warnung wenn ein Unerbittlicher Auszubildender stirbt",
+   WarningTeleportSoon	= "Zeige Vorwarnung für Teleport"
 })
 
 L:SetTimerLocalization({
    TimerWave   = "Welle %d",
-   TimerPhase2   = "Phase 2"
+   TimerPhase2   = "Phase 2",
+   TimerTeleport	= "Teleport"
 })
 
 L:SetWarningLocalization({
@@ -293,7 +298,8 @@ L:SetWarningLocalization({
    WarningRiderDown   = "Reiter tot",
    WarningKnightDown   = "Ritter tot",
    WarningTraineeDown	= "Auszubildender tot",
-   WarningPhase2      = "Phase 2"
+   WarningPhase2      = "Phase 2",
+   WarningTeleportNow   = "Teleportiert"
 })
 
 L:SetMiscLocalization({
@@ -354,6 +360,7 @@ L:SetOptionLocalization({
    TimerLanding         = "Zeige Timer für Landung",
    TimerIceBlast         = "Zeige Timer für Frostatem",
    WarningDeepBreath      = "Zeige Spezialwarnung für Frostatem",
+   WarningFrozenOrb	= "Warnung für Gefrorene Kugel anzeigen",
    WarningIceblock		= "Schreie wenn du ein Eisblock bist"
 })
 
@@ -366,12 +373,14 @@ L:SetWarningLocalization({
    WarningAirPhaseSoon      = "Flugphase in 10 Sek",
    WarningAirPhaseNow      = "Flugphase",
    WarningLanded         = "Saphiron ist gelandet",
+   WarningFrozenOrb	= "Gefrorene Kugel",
    WarningDeepBreath      = "Frostatem",
 })
 
 L:SetTimerLocalization({
    TimerAir            = "Flugphase",
    TimerLanding         = "Landung",
+   TimerFrozenOrb	      = "Gefrorene Kugel",
    TimerIceBlast         = "Frostatem"   
 })
 
