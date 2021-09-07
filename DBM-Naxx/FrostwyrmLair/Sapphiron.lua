@@ -29,7 +29,7 @@ mod:AddBoolOption("WarningIceblock", true, "announce")
 local timerDrainLife	= mod:NewCDTimer(22, 28542)
 local timerAirPhase		= mod:NewTimer(66, "TimerAir", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendUnBurrow.blp")
 local timerLanding		= mod:NewTimer(28.5, "TimerLanding", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendBurrow.blp")
-local timerIceBlast		= mod:NewTimer(9.3, "TimerIceBlast", 15876)
+local timerIceBlast		= mod:NewTimer(8.2, "TimerIceBlast", 15876)
 local timerFrozenOrb 	= mod:NewTimer(30, "TimerFrozenOrb", 72081)
 
 local noTargetTime = 0
