@@ -118,6 +118,12 @@ end
 
 function mod:UNIT_HEALTH(uId)
 	if self:GetUnitCreatureId(uId) == 16060 and UnitHealth(uId) / UnitHealthMax(uId) <= 0.30 then
+		self:SendSync("hp30")
+	end
+end
+
+function mod:OnSync(event)
+	if event == "hp30" then
 		self:UnscheduleMethod("TeleportLoop")
 		self:Unschedule("warnTeleportSoon")
 		self:Stop("TimerTeleport")
