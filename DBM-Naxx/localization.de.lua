@@ -275,6 +275,7 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
    TimerWave         = "Zeige Timer für nächste Welle",
    TimerPhase2         = "Zeige Timer für Phase 2",
+   TimerTeleport		= "Zeige Timer für Teleport",
    WarningWaveSoon      = "Zeige Vorwarnung für die Wellen",
    WarningWaveSpawned   = "Zeige Warnung für gespawnte Wellen",
    WarningRiderDown   = "Zeige Warnung wenn ein Unerbittlicher Reiter stirbt",
@@ -284,7 +285,8 @@ L:SetOptionLocalization({
 
 L:SetTimerLocalization({
    TimerWave   = "Welle %d",
-   TimerPhase2   = "Phase 2"
+   TimerPhase2   = "Phase 2",
+   TimerTeleport	= "Teleport"
 })
 
 L:SetWarningLocalization({
@@ -293,7 +295,8 @@ L:SetWarningLocalization({
    WarningRiderDown   = "Reiter tot",
    WarningKnightDown   = "Ritter tot",
    WarningTraineeDown	= "Auszubildender tot",
-   WarningPhase2      = "Phase 2"
+   WarningPhase2      = "Phase 2",
+   WarningTeleportNow   = "Teleportiert"
 })
 
 L:SetMiscLocalization({

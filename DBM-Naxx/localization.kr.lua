@@ -283,17 +283,20 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave			= "다음 웨이브 타이머 보기",
 	TimerPhase2			= "2 페이즈 타이머 보기",
+	TimerTeleport		= "순간이동 타이머 보기",
 	WarningWaveSoon		= "웨이브 사전 경고 보기",
 	WarningWaveSpawned	= "웨이브 생성 경고 보기",
 	WarningRiderDown	= "죽음의 기병이 죽었을 때 경고 보기",
 	WarningKnightDown	= "죽음의 기사가 죽었을 때 경고 보기",
 	WarningTraineeDown	= "죽음의 연습생 죽었을 때 경고 보기",
-	WarningPhase2		= "2 페이즈 경고 보기"
+	WarningPhase2		= "2 페이즈 경고 보기",
+	WarningTeleportSoon	= "순간이동 사전 경고 보기"
 })
 
 L:SetTimerLocalization({
 	TimerWave	= "웨이브 #%d",
-	TimerPhase2	= "2 페이즈"
+	TimerPhase2	= "2 페이즈",
+	TimerTeleport = "순간이동"
 })
 
 L:SetWarningLocalization({
@@ -302,7 +305,8 @@ L:SetWarningLocalization({
 	WarningRiderDown	= "무자비한 죽음의 기병 죽음",
 	WarningKnightDown	= "무자비한 죽음의 기사 죽음",
 	WarningTraineeDown	= "무자비한 죽음의 연습생 죽음",
-	WarningPhase2		= "2 페이즈 시작"
+	WarningPhase2		= "2 페이즈 시작",
+	WarningTeleportSoon	= "3초 후 순간이동"
 })
 
 L:SetMiscLocalization({

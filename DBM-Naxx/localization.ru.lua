@@ -269,16 +269,19 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave			= "Отсчет времени до волны",
 	TimerPhase2			= "Отсчет времени до фазы 2",
+	TimerTeleport		= "Отсчет времени до телепортации",
 	WarningWaveSoon		= "Предупреждать перед следующей волной",
 	WarningWaveSpawned	= "Предупреждение для волны призыва",
 	WarningRiderDown	= "Предупреждение, когда всадник мертв",
 	WarningKnightDown	= "Предупреждение, когда рыцарь мертв",
-	WarningTraineeDown	= "Предупреждение, когда стажер мертв"
+	WarningTraineeDown	= "Предупреждение, когда стажер мертв",
+	WarningTeleportSoon	= "Предупреждать перед следующей телепортацией"
 })
 
 L:SetTimerLocalization({
 	TimerWave	= "Волна %d",
-	TimerPhase2	= "Фаза 2"
+	TimerPhase2	= "Фаза 2",
+	TimerTeleport		= "Телепортация"
 })
 
 L:SetWarningLocalization({
@@ -287,7 +290,8 @@ L:SetWarningLocalization({
 	WarningRiderDown	= "Всадник мертв",
 	WarningKnightDown	= "Рыцарь мертв",
 	WarningTraineeDown	= "стажер мертв",
-	WarningPhase2		= "Фаза 2"
+	WarningPhase2		= "Фаза 2",
+	WarningTeleportSoon	= "Телепортация через 3 секунд"
 })
 
 L:SetMiscLocalization({

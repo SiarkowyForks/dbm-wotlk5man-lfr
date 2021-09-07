@@ -273,16 +273,19 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave				= "為下一波顯示計時器",
 	TimerPhase2				= "為第二階段顯示計時器",
+	TimerTeleport			= "為傳送顯示計時器",
 	WarningWaveSoon			= "為波數顯示預先警告",
 	WarningWaveSpawned		= "為波數出現顯示警告",
 	WarningRiderDown		= "當無情的騎兵死亡時顯示警告",
 	WarningKnightDown		= "當無情的死亡騎士死亡時顯示警告",
-	WarningTraineeDown		= "當一個不屈不撓的實習生死亡時顯示警告"
+	WarningTraineeDown		= "當一個不屈不撓的實習生死亡時顯示警告",
+	WarningTeleportSoon		= "為傳送顯示預先警告"
 })
 
 L:SetTimerLocalization({
 	TimerWave			= "第 %d 波",
-	TimerPhase2			= "第2階段"
+	TimerPhase2			= "第2階段",
+	TimerTeleport		= "傳送"
 })
 
 L:SetWarningLocalization({
@@ -291,7 +294,8 @@ L:SetWarningLocalization({
 	WarningRiderDown		= "騎兵已死亡",
 	WarningKnightDown		= "死亡騎士已死亡",
 	WarningTraineeDown		= "實習生死了",
-	WarningPhase2			= "第二階段"
+	WarningPhase2			= "第二階段",
+	WarningTeleportSoon		= "3秒後 傳送"
 })
 
 L:SetMiscLocalization({
