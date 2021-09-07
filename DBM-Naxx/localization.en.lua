@@ -343,6 +343,7 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
+	PlaySoundOnIceBlast = "Play sound when IceBlast was casted on someone",
 	WarningAirPhaseSoon	= "Show pre-warning for air phase",
 	WarningAirPhaseNow	= "Announce air phase",
 	WarningLanded		= "Announce ground phase",
@@ -350,6 +351,7 @@ L:SetOptionLocalization({
 	TimerLanding		= "Show timer for landing",
 	TimerIceBlast		= "Show timer for Frost Breath",
 	WarningDeepBreath	= "Show special warning for Frost Breath",
+	WarningFrozenOrb	= "Show warning for Frozen Orb",
 	WarningIceblock		= "Yell on Ice Block"
 })
 
@@ -362,12 +364,14 @@ L:SetWarningLocalization({
 	WarningAirPhaseSoon	= "Air phase in 10 seconds",
 	WarningAirPhaseNow	= "Air phase",
 	WarningLanded		= "Sapphiron landed",
+	WarningFrozenOrb	= "Frozen Orb",
 	WarningDeepBreath	= "Frost Breath"
 })
 
 L:SetTimerLocalization({
 	TimerAir		= "Air phase",
 	TimerLanding	= "Landing",
+	TimerFrozenOrb	= "Frozen Orb",
 	TimerIceBlast	= "Frost Breath"	
 })
 

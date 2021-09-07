@@ -20,6 +20,7 @@ local warnDrainLifeSoon	= mod:NewSoonAnnounce(28542, 1)
 local warnAirPhaseSoon	= mod:NewAnnounce("WarningAirPhaseSoon", 3, "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendUnBurrow.blp")
 local warnAirPhaseNow	= mod:NewAnnounce("WarningAirPhaseNow", 4, "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendUnBurrow.blp")
 local warnLanded		= mod:NewAnnounce("WarningLanded", 4, "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendBurrow.blp")
+local warnFrozenOrb		= mod:NewAnnounce("WarningFrozenOrb", 4, 72081)
 
 local warnDeepBreath	= mod:NewSpecialWarning("WarningDeepBreath")
 
@@ -28,12 +29,19 @@ mod:AddBoolOption("WarningIceblock", true, "announce")
 local timerDrainLife	= mod:NewCDTimer(22, 28542)
 local timerAirPhase		= mod:NewTimer(66, "TimerAir", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendUnBurrow.blp")
 local timerLanding		= mod:NewTimer(28.5, "TimerLanding", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendBurrow.blp")
-local timerIceBlast		= mod:NewTimer(9.3, "TimerIceBlast", 15876)
+local timerIceBlast		= mod:NewTimer(8.2, "TimerIceBlast", 15876)
+local timerFrozenOrb 	= mod:NewTimer(30, "TimerFrozenOrb", 72081)
 
 local noTargetTime = 0
 local isFlying = false
 
+mod:AddBoolOption("PlaySoundOnIceBlast", false)
+
 function mod:OnCombatStart(delay)
+	if mod:IsDifficulty("heroic25") then
+		timerFrozenOrb:Start(-delay)
+		warnFrozenOrb:Schedule(30 - delay)
+	end
 	noTargetTime = 0
 	isFlying = false
 	warnAirPhaseSoon:Schedule(38.5 - delay)
@@ -65,7 +73,14 @@ mod.CHAT_MSG_RAID_BOSS_EMOTE = mod.CHAT_MSG_MONSTER_EMOTE -- used to be a normal
 
 function mod:OnSync(event)
 	if event == "DeepBreath" then
-		timerIceBlast:Show()
+		if self.Options.PlaySoundOnIceBlast then
+			PlaySoundFile("Sound\\Creature\\HeadlessHorseman\\Horseman_Beckon_01.wav")
+		end
+		if mod:IsDifficulty("heroic25") then
+			timerIceBlast:Start(7.8)
+		else
+			timerIceBlast:Show()
+		end
 		timerLanding:Update(14)
 		self:ScheduleMethod(14.5, "Landing")
 		warnDeepBreath:Show()
@@ -73,6 +88,12 @@ function mod:OnSync(event)
 end
 
 function mod:Landing()
+	if mod:IsDifficulty("heroic25") then
+		timerFrozenOrb:Start()
+		timerFrozenOrb:Schedule(30, 25)
+		warnFrozenOrb:Schedule(30)
+		warnFrozenOrb:Schedule(55)
+	end
 	warnAirPhaseSoon:Schedule(56)
 	warnLanded:Show()
 	timerAirPhase:Start()
