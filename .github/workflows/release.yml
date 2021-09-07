@@ -55,10 +55,15 @@ jobs:
 
       - name: Zip Assets
         run: 7z a -tzip "${{ env.asset_zip }}" "DBM-*/"
-
+        
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: UVASOMIT/action-release-with-assets@master
         with:
-          tag_name: ${{ steps.tag_release.outputs.new_tag }}
-          body: ${{ steps.tag_release.outputs.changelog }}
+          verbose: false
+          token: ${{ secrets.GITHUB_TOKEN }}
           files: ${{ env.asset_zip }}
+          draft: false
+          prerelease: false
+          body: ${{ steps.tag_version.outputs.changelog }}
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          tag: ${{ steps.tag_release.outputs.new_tag }}
