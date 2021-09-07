@@ -35,6 +35,8 @@ local timerFrozenOrb 	= mod:NewTimer(30, "TimerFrozenOrb", 72081)
 local noTargetTime = 0
 local isFlying = false
 
+mod:AddBoolOption("PlaySoundOnIceBlast", false)
+
 function mod:OnCombatStart(delay)
 	if mod:IsDifficulty("heroic25") then
 		timerFrozenOrb:Start(-delay)
@@ -71,6 +73,9 @@ mod.CHAT_MSG_RAID_BOSS_EMOTE = mod.CHAT_MSG_MONSTER_EMOTE -- used to be a normal
 
 function mod:OnSync(event)
 	if event == "DeepBreath" then
+		if self.Options.PlaySoundOnIceBlast then
+			PlaySoundFile("Sound\\Creature\\HeadlessHorseman\\Horseman_Beckon_01.wav")
+		end
 		if mod:IsDifficulty("heroic25") then
 			timerIceBlast:Start(7.8)
 		else
