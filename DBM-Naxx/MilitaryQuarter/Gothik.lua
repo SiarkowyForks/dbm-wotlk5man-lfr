@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Gothik", "DBM-Naxx", 4)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 4444 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4446 $"):sub(12, -3))
 mod:SetCreatureID(16060)
 
 mod:RegisterCombat("combat")
