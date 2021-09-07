@@ -343,6 +343,7 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
+	PlaySoundOnIceBlast = "Play sound when IceBlast was casted on someone",
 	WarningAirPhaseSoon	= "Show pre-warning for air phase",
 	WarningAirPhaseNow	= "Announce air phase",
 	WarningLanded		= "Announce ground phase",
