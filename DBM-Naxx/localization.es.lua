@@ -276,16 +276,19 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave			= "Mostrar tiempo de Oleadas",
 	TimerPhase2			= "Mostrar tiempo para Fase 2",
+	TimerTeleport		= "Mostrar tiempo de Teletransporte",
 	WarningWaveSoon		= "Mostrar pre-aviso para Oleadas",
 	WarningWaveSpawned	= "Mostrar aviso para Oleadas",
 	WarningRiderDown	= "Mostrar aviso cuando un Jinete muere",
 	WarningKnightDown	= "Mostrar aviso cuando un Caballero muere",
-	WarningTraineeDown	= "Mostrar aviso cuando un Aprendiz muere"
+	WarningTraineeDown	= "Mostrar aviso cuando un Aprendiz muere",
+	WarningTeleportSoon	= "Mostrar aviso antes de que se Teletransporte"
 })
 
 L:SetTimerLocalization({
 	TimerWave	= "Oleada #%d",
-	TimerPhase2	= "Fase 2"
+	TimerPhase2	= "Fase 2",
+	TimerTeleport	= "Teletransporte"
 })
 
 L:SetWarningLocalization({
@@ -294,7 +297,8 @@ L:SetWarningLocalization({
 	WarningRiderDown	= "Jinete muerto",
 	WarningKnightDown	= "Caballero muerto",
 	WarningTraineeDown	= "Aprendiz muerto",
-	WarningPhase2		= "Fase 2"
+	WarningPhase2		= "Fase 2",
+	WarningTeleportSoon	= "Teletransporte en 3 seg"
 })
 
 L:SetMiscLocalization({

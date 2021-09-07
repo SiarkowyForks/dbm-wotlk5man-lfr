@@ -268,17 +268,20 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave			= "Afficher le timer des vagues",
 	TimerPhase2			= "Afficher le timer pour la Phase 2",
+	TimerTeleport		= "Activer le timer pour la téléporation",
 	WarningWaveSoon		= "Activer le pré-avertissement pour les Vagues",
 	WarningWaveSpawned	= "Avertir quand une vague est arrivée",
 	WarningRiderDown	= "Avertir quand un Cavalier meurt",
 	WarningKnightDown	= "Avertir quand un Chevalier meurt",
 	WarningTraineeDown	= "Avertir quand un Stagiaire meurt"
-	WarningPhase2		= "Activer l'avertissement pour la Phase 2"
+	WarningPhase2		= "Activer l'avertissement pour la Phase 2",
+	WarningTeleportSoon	= "Activer le pré-avertissement pour la téléporation"
 })
 
 L:SetTimerLocalization({
 	TimerWave			= "Vague #%d",
-	TimerPhase2			= "Phase 2"
+	TimerPhase2			= "Phase 2",
+	TimerTeleport		= "Téléportation"
 })
 
 L:SetWarningLocalization({
@@ -287,7 +290,8 @@ L:SetWarningLocalization({
 	WarningRiderDown	= "Cavalier down",
 	WarningKnightDown	= "Chevalier down",
 	WarningTraineeDown	= "Stagiaire down",
-	WarningPhase2		= "Phase 2"
+	WarningPhase2		= "Phase 2",
+	WarningTeleportSoon	= "Téléportation dans in 3 sec"
 })
 
 L:SetMiscLocalization({
