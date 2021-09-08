@@ -176,11 +176,13 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	SpecialWarningInjection		= "Show special warning when you are affected by Mutating Injection",
-	SetIconOnInjectionTarget	= "Set icons on Mutating Injection targets"
+	SetIconOnInjectionTarget	= "Set icons on Mutating Injection targets",
+	WarningFalloutSlime			= "Show warning when Fallout Slime spawns"
 })
 
 L:SetWarningLocalization({
-	SpecialWarningInjection	= "Mutating Injection on you"
+	SpecialWarningInjection	= "Mutating Injection on you",
+	WarningFalloutSlime		= "Fallout Slime spawned"
 })
 
 L:SetTimerLocalization({
