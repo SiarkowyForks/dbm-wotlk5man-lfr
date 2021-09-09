@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Gluth", "DBM-Naxx", 2)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 2869 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4450 $"):sub(12, -3))
 mod:SetCreatureID(15932)
 
 mod:RegisterCombat("combat")
@@ -20,9 +20,12 @@ local enrageTimer		= mod:NewBerserkTimer(420)
 local timerDecimate		= mod:NewCDTimer(104, 54426)
 
 function mod:OnCombatStart(delay)
-	enrageTimer:Start(420 - delay)
 	timerDecimate:Start(110 - delay)
 	warnDecimateSoon:Schedule(100 - delay)
+	if mod:IsDifficulty("heroic25") then
+		enrageTimer:Start(480 - delay)
+	else
+	enrageTimer:Start(420 - delay)
 end
 
 local decimateSpam = 0
