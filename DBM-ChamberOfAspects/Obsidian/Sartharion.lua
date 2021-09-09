@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Sartharion", "DBM-ChamberOfAspects", 1)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 4380 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4450 $"):sub(12, -3))
 mod:SetCreatureID(28860)
 mod:SetZone()
 
@@ -29,9 +29,10 @@ mod:AddBoolOption("AnnounceFails", true, "announce")
 
 local timerShadowFissure    = mod:NewCastTimer(5, 59128)--Cast timer until Void Blast. it's what happens when shadow fissure explodes.
 local timerWall             = mod:NewCDTimer(30, 43113)
-local timerTenebron         = mod:NewTimer(30, "TimerTenebron", 61248)
-local timerShadron          = mod:NewTimer(80, "TimerShadron", 58105)
-local timerVesperon         = mod:NewTimer(120, "TimerVesperon", 61251)
+local timerTenebron         = mod:NewTimer(33, "TimerTenebron", 61248)
+local timerShadron          = mod:NewTimer(120, "TimerShadron", 58105)
+local timerVesperon         = mod:NewTimer(80, "TimerVesperon", 61251)
+local enrageTimer			= mod:NewBerserkTimer(720)
 
 mod:AddBoolOption("PlaySoundOnFireWall")
 
@@ -130,6 +131,7 @@ function mod:OnCombatStart(delay)
 
 	table.wipe(lastvoids)
 	table.wipe(lastfire)
+	enrageTimer:Start(-delay)
 end
 
 
