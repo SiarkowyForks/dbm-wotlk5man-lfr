@@ -2,7 +2,7 @@
 local mod	= DBM:NewMod("Thaddius", "DBM-Naxx", 2)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 2869 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4450 $"):sub(12, -3))
 mod:SetCreatureID(15928)
 
 mod:RegisterCombat("yell", L.Yell)
@@ -24,7 +24,7 @@ local warnThrowSoon			= mod:NewSoonAnnounce(28338, 1)
 local enrageTimer			= mod:NewBerserkTimer(365)
 local timerNextShift		= mod:NewNextTimer(30, 28089)
 local timerShiftCast		= mod:NewCastTimer(3, 28089)
-local timerThrow			= mod:NewNextTimer(20.6, 28338)
+local timerThrow			= mod:NewNextTimer(20.5, 28338)
 
 mod:AddBoolOption("ArrowsEnabled", false, "Arrows")
 mod:AddBoolOption("ArrowsRightLeft", false, "Arrows")
@@ -46,7 +46,7 @@ function mod:OnCombatStart(delay)
 	down = 0
 	self:ScheduleMethod(20.6 - delay, "TankThrow")
 	timerThrow:Start(-delay)
-	warnThrowSoon:Schedule(17.6 - delay)
+	warnThrowSoon:Schedule(17.1 - delay)
 end
 
 local lastShift = 0
@@ -121,8 +121,8 @@ function mod:TankThrow()
 		return
 	end
 	timerThrow:Start()
-	warnThrowSoon:Schedule(17.6)
-	self:ScheduleMethod(20.6, "TankThrow")
+	warnThrowSoon:Schedule(17.1)
+	self:ScheduleMethod(20.1, "TankThrow")
 end
 
 local function arrowOnUpdate(self, elapsed)

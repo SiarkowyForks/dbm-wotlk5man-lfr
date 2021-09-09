@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Loatheb", "DBM-Naxx", 3)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 4444 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4450 $"):sub(12, -3))
 mod:SetCreatureID(16011)
 
 mod:RegisterCombat("combat")
@@ -43,14 +43,15 @@ function mod:OnCombatStart(delay)
 		doomTimer = 90
 		timerAura:Start(auraTimer + 2 - delay)
 		timerHealthy:Start(auraTimer + 8 - delay)
+		timerDoom:Start(30 - delay, doomCounter + 1)
 	else
 		sporeTimer = 36
 		auraTimer = 17
 		doomTimer = 120
+		timerDoom:Start(120 - delay, doomCounter + 1)
 	end
 	timerSpore:Start(sporeTimer - delay)
 	warnSporeSoon:Schedule(sporeTimer - 5 - delay)
-	timerDoom:Start(120 - delay, doomCounter + 1)
 end
 
 function mod:SPELL_CAST_SUCCESS(args)
