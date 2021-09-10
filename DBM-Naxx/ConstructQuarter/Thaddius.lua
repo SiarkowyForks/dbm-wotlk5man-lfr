@@ -21,7 +21,7 @@ local warnChargeNotChanged	= mod:NewSpecialWarning("WarningChargeNotChanged", fa
 local warnThrow				= mod:NewSpellAnnounce(28338, 2)
 local warnThrowSoon			= mod:NewSoonAnnounce(28338, 1)
 
-local enrageTimer			= mod:NewBerserkTimer(365)
+local enrageTimer			= mod:NewBerserkTimer(365) --> Timer wrong, at least 1-2min longer, will test next time
 local timerNextShift		= mod:NewNextTimer(30, 28089)
 local timerShiftCast		= mod:NewCastTimer(3, 28089)
 local timerThrow			= mod:NewNextTimer(20.1, 28338)
@@ -44,7 +44,7 @@ function mod:OnCombatStart(delay)
 	phase2 = false
 	currentCharge = nil
 	down = 0
-	self:ScheduleMethod(20.6 - delay, "TankThrow")
+	self:ScheduleMethod(20.1 - delay, "TankThrow")
 	timerThrow:Start(-delay)
 	warnThrowSoon:Schedule(17.1 - delay)
 end
