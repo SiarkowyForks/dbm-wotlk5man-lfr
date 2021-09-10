@@ -80,6 +80,7 @@ function mod:CHAT_MSG_MONSTER_YELL(msg)
 		timerHolyWrath:Stop()
 	elseif msg == "What a bloody waste this is!" or msg:find("What a bloody waste this is!") then
 		timerKorthazz:Stop()
+		timerMeteor:Stop()
 	end
 end
 
