@@ -24,7 +24,7 @@ local warnThrowSoon			= mod:NewSoonAnnounce(28338, 1)
 local enrageTimer			= mod:NewBerserkTimer(365)
 local timerNextShift		= mod:NewNextTimer(30, 28089)
 local timerShiftCast		= mod:NewCastTimer(3, 28089)
-local timerThrow			= mod:NewNextTimer(20.5, 28338)
+local timerThrow			= mod:NewNextTimer(20.1, 28338)
 
 mod:AddBoolOption("ArrowsEnabled", false, "Arrows")
 mod:AddBoolOption("ArrowsRightLeft", false, "Arrows")
