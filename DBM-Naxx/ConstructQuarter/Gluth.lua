@@ -26,6 +26,7 @@ function mod:OnCombatStart(delay)
 		enrageTimer:Start(480 - delay)
 	else
 	enrageTimer:Start(420 - delay)
+	end
 end
 
 local decimateSpam = 0
