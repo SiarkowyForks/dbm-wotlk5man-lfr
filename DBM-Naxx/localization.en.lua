@@ -199,7 +199,7 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	SpecialWarningFleshRip	= "Show special warning when you are affected by Flesh Rip",
-	SetIconOnFleshRipTarget	= "Set icons on Flesh Rip targets"
+	SetIconOnFleshRipTarget = "Set icons on Flesh Rip targets"
 })
 
 L:SetWarningLocalization({
