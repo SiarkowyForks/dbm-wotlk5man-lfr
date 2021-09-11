@@ -45,8 +45,8 @@ local markCounter = 0
 function mod:OnCombatStart(delay)
 	timerVoidZone:Start(16 - delay)
 	markCounter = 0
-	timerBlaumeux:Start()
-	timerRivendare:Start()
+	timerBlaumeux:Start(-delay)
+	timerRivendare:Start(-delay)
 end
 
 local markSpam = 0
@@ -58,12 +58,12 @@ function mod:SPELL_CAST_SUCCESS(args)
 end
 
 function mod:CHAT_MSG_MONSTER_YELL(msg)
-	if msg == "Death... will not stop me." or msg:find("Death... will not stop me.") then
+	if msg:find(L.Yell1) then
 		timerKorthazz:Start()
 		timerRivendare:Stop()
 		timerMeteor:Start(30)
-	elseif msg == "Touche..." or msg:find("Touche...") then
-		if mod:IsDifficulty("normal10")	then
+	elseif msg:find(L.Yell2) then
+		if mod:IsDifficulty("heroic10")	then
 			timerVoidZone:Stop()
 		end
 		if self.Options.ShowRange then
@@ -72,13 +72,13 @@ function mod:CHAT_MSG_MONSTER_YELL(msg)
 		timerZeliek:Start()
 		timerHolyWrath:Start()
 		timerBlaumeux:Stop()
-	elseif msg == "It is... as it should be." or msg:find("It is... as it should be.") then
+	elseif msg:find(L.Yell3) then
 		if self.Options.ShowRange then
 			self:RangeToggle(false)
 		end
 		timerZeliek:Stop()
 		timerHolyWrath:Stop()
-	elseif msg == "What a bloody waste this is!" or msg:find("What a bloody waste this is!") then
+	elseif msg:find(L.Yell4) then
 		timerKorthazz:Stop()
 		timerMeteor:Stop()
 	end
@@ -93,20 +93,22 @@ function mod:SPELL_AURA_APPLIED_DOSE(args)
 end
 
 function mod:SPELL_SUMMON(args)
-	if args:IsSpellName("Void Zone") then
+	if args:IsSpellID(28863, 57463) then
 		timerVoidZone:Start()
 	end
 end
 
 function mod:SPELL_CAST_START(args)
-	if args:IsSpellName("Meteor") then
+	if args:IsSpellID(28884, 57467) then
 		timerMeteor:Start()
 	end
 end
 
 function mod:SPELL_DAMAGE(args)
-	if args:IsSpellName("Holy Wrath") then
-		timerHolyWrath:Start()
+	if args:IsSpellID(28883, 57466) then
+		if mod:IsDifficulty("heroic25") then
+			timerHolyWrath:Start()
+		end
 	end
 end
 
