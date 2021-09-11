@@ -265,11 +265,6 @@ do
 		local v = self.spellId
 		return v == a1 or v == a2 or v == a3 or v == a4
 	end
-	
-	function argsMT.__index:IsSpellName(a1, a2, a3, a4)
-		local v = self.spellName
-		return v == a1 or v == a2 or v == a3 or v == a4
-	end
 
 	function argsMT.__index:IsPlayer()
 		return bit.band(args.destFlags, COMBATLOG_OBJECT_AFFILIATION_MINE) ~= 0 and bit.band(args.destFlags, COMBATLOG_OBJECT_TYPE_PLAYER) ~= 0
