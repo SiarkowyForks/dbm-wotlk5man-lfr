@@ -342,10 +342,10 @@ L:SetMiscLocalization({
 	Rivendare	= "Baron Rivendare",
 	Blaumeux	= "Lady Blaumeux",
 	Zeliek		= "Sir Zeliek",
-	Yell1 = "Death... will not stop me.",
-	Yell2 = "Touche...",
-	Yell3 = "It is... as it should be.",
-	Yell4 = "What a bloody waste this is!"
+	Yell1 		= "Death... will not stop me.",
+	Yell2 		= "Touche...",
+	Yell3 		= "It is... as it should be.",
+	Yell4 		= "What a bloody waste this is!"
 })
 
 -----------------
