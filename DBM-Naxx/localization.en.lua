@@ -316,10 +316,19 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	WarningMarkSoon				= "Show pre-warning for Mark",
 	WarningMarkNow				= "Show warning for Mark",
-	SpecialWarningMarkOnPlayer	= "Show special warning when you are affected by more than 4 marks"
+	SpecialWarningMarkOnPlayer	= "Show special warning when you are affected by more than 4 marks",
+	TimerLadyBlaumeuxEnrage		= "Show Lady Blaumeux Enrage Timer",
+	TimerSirZeliekEnrage		= "Show Sir Zeliek Enrage Timer",
+	TimerThaneKorthazzEnrage	= "Show Thane Korthazz Enrage Timer",
+	TimerBaronRivendareEnrage	= "Show Baron Rivendare Enrage Timer",
+	ShowRange					= "Show Range frame for Sir Zeliek Holy Wrath Chain range"
 })
 
 L:SetTimerLocalization({
+	TimerLadyBlaumeuxEnrage		= "Lady Blaumeux Enrage",
+	TimerSirZeliekEnrage		= "Sir Zeliek Enrage",
+	TimerThaneKorthazzEnrage	= "Thane Korthazz Enrage",
+	TimerBaronRivendareEnrage	= "Baron Rivendare Enrage"
 })
 
 L:SetWarningLocalization({
@@ -332,7 +341,11 @@ L:SetMiscLocalization({
 	Korthazz	= "Thane Korth'azz",
 	Rivendare	= "Baron Rivendare",
 	Blaumeux	= "Lady Blaumeux",
-	Zeliek		= "Sir Zeliek"
+	Zeliek		= "Sir Zeliek",
+	Yell1 		= "Death... will not stop me.",
+	Yell2 		= "Touche...",
+	Yell3 		= "It is... as it should be.",
+	Yell4 		= "What a bloody waste this is!"
 })
 
 -----------------
