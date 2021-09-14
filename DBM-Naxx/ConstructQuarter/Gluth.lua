@@ -31,7 +31,7 @@ local fleshripIcons = {}
 function mod:OnCombatStart(delay)
 	timerDecimate:Start(110 - delay)
 	warnDecimateSoon:Schedule(100 - delay)
-	if mod:IsDifficulty("heroic25") then
+	if self:IsDifficulty("heroic25") then
 		enrageTimer:Start(480 - delay)
 	else
 	enrageTimer:Start(420 - delay)
@@ -70,7 +70,7 @@ end
 local function addIcon()
 	for i,j in ipairs(fleshripIcons) do
 		local icon = 9 - i
-		mod:SetIcon(j, icon)
+		self:SetIcon(j, icon)
 	end
 end
 
@@ -78,7 +78,7 @@ local function removeIcon(target)
 	for i,j in ipairs(fleshripIcons) do
 		if j == target then
 			table.remove(fleshripIcons, i)
-			mod:SetIcon(target, 0)
+			self:SetIcon(target, 0)
 		end
 	end
 	addIcon()
@@ -86,7 +86,7 @@ end
 
 function mod:OnCombatEnd()
     for i,j in ipairs(fleshripIcons) do
-       mod:SetIcon(j, 0)
+       self:SetIcon(j, 0)
     end
 end
 
