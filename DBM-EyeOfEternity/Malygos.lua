@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Malygos", "DBM-EyeOfEternity")
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 3726 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4451 $"):sub(12, -3))
 mod:SetCreatureID(28859)
 
 mod:RegisterCombat("yell", L.YellPull)
@@ -22,7 +22,7 @@ local warnSurge			= mod:NewTargetAnnounce(60936, 3)
 
 local specWarnSurge		= mod:NewSpecialWarningYou(60936)
 
-local enrageTimer		= mod:NewBerserkTimer(615)
+local enrageTimer		= mod:NewBerserkTimer(600)
 local timerSpark		= mod:NewTimer(30, "TimerSpark", 59381)
 local timerVortex		= mod:NewCastTimer(11, 56105)
 local timerVortexCD		= mod:NewNextTimer(60, 56105)
