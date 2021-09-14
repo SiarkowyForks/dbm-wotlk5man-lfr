@@ -71,7 +71,7 @@ end
 local function addIcon()
 	for i,j in ipairs(fleshripIcons) do
 		local icon = 9 - i
-		SetIcon(j, icon)
+		mod:SetIcon(j, icon)
 	end
 end
 
@@ -79,7 +79,7 @@ local function removeIcon(target)
 	for i,j in ipairs(fleshripIcons) do
 		if j == target then
 			table.remove(fleshripIcons, i)
-			SetIcon(target, 0)
+			mod:SetIcon(target, 0)
 		end
 	end
 	addIcon()
