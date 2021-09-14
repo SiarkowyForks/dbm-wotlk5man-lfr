@@ -2,7 +2,7 @@
 local mod	= DBM:NewMod("Thaddius", "DBM-Naxx", 2)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 4450 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4451 $"):sub(12, -3))
 mod:SetCreatureID(15928)
 
 mod:RegisterCombat("yell", L.Yell)
