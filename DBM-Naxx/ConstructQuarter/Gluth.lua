@@ -21,7 +21,7 @@ local warnDecimateNow	= mod:NewSpellAnnounce(54426, 3)
 local specwarnFleshRip	= mod:NewSpecialWarning("SpecialWarningFleshRip")
 local warnFleshRip		= mod:NewTargetAnnounce(40199, 2)
 
-local enrageTimer		= mod:NewBerserkTimer(480)
+local enrageTimer		= mod:NewBerserkTimer(420)
 local timerDecimate		= mod:NewCDTimer(104, 54426)
 
 mod:AddBoolOption("SetIconOnFleshRipTarget", true)
@@ -29,13 +29,13 @@ mod:AddBoolOption("SetIconOnFleshRipTarget", true)
 local fleshripIcons = {}
 
 function mod:OnCombatStart(delay)
-	if mod:IsDifficulty("heroic25") then
-		enrageTimer:Start(-delay)
-	else
-		enrageTimer:Start(420 - delay)
-	end
 	timerDecimate:Start(110 - delay)
 	warnDecimateSoon:Schedule(100 - delay)
+	if mod:IsDifficulty("heroic25") then
+		enrageTimer:Start(480 - delay)
+	else
+	enrageTimer:Start(420 - delay)
+	end
 end
 
 local decimateSpam = 0
