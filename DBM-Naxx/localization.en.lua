@@ -197,6 +197,15 @@ L:SetGeneralLocalization({
 	name = "Gluth"
 })
 
+L:SetOptionLocalization({
+	SpecialWarningFleshRip	= "Show special warning when you are affected by Flesh Rip",
+	SetIconOnFleshRipTarget = "Set icons on Flesh Rip targets"
+})
+
+L:SetWarningLocalization({
+	SpecialWarningFleshRip	= "Flesh Rip on you"
+})
+
 ----------------
 --  Thaddius  --
 ----------------
