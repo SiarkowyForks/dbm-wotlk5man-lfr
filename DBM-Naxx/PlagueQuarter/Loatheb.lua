@@ -11,7 +11,8 @@ mod:EnableModel()
 mod:RegisterEvents(
 	"SPELL_CAST_SUCCESS",
 	"SPELL_DAMAGE",
-	"SWING_DAMAGE"
+	"SWING_DAMAGE",
+	"UNIT_DIED"
 )
 
 local warnSporeNow		= mod:NewSpellAnnounce(32329, 2)
@@ -19,8 +20,8 @@ local warnSporeSoon		= mod:NewSoonAnnounce(32329, 1)
 local warnDoomNow		= mod:NewSpellAnnounce(29204, 3)
 local warnHealSoon		= mod:NewAnnounce("WarningHealSoon", 4, 48071)
 local warnHealNow		= mod:NewAnnounce("WarningHealNow", 1, 48071, false)
-local warnHealthySoon 	= mod:NewAnnounce("Warning Healthy Spore Soon", 5, 35336)
-local warnHealthyNow 	= mod:NewAnnounce("Warning Healthy Spore Now", 1, 35336)
+local warnHealthySoon 	= mod:NewAnnounce("WarningHealthySporeSoon", 1, 35336)
+local warnHealthyNow 	= mod:NewAnnounce("WarningHealthySporeNow", 4, 35336)
 
 local timerHealthy 	= mod:NewNextTimer(15, 35336)
 local timerSpore	= mod:NewNextTimer(36, 32329)
@@ -37,7 +38,7 @@ local doomTimer		= 120
 
 function mod:OnCombatStart(delay)
 	doomCounter = 0
-	if mod:IsDifficulty("heroic25") then
+	if self:IsDifficulty("heroic25") then
 		sporeTimer = 18
 		auraTimer = 15
 		doomTimer = 90
@@ -56,7 +57,7 @@ end
 
 function mod:SPELL_CAST_SUCCESS(args)
 	if args:IsSpellID(29234) then
-		if mod:IsDifficulty("heroic25") then
+		if self:IsDifficulty("heroic25") then
 			timerSpore:Start(sporeTimer - 3)
 			warnSporeNow:Show()
 			warnSporeSoon:Schedule(sporeTimer - 8)
@@ -75,7 +76,7 @@ function mod:SPELL_CAST_SUCCESS(args)
 		warnDoomNow:Show(doomCounter)
 		timerDoom:Start(timer, doomCounter + 1)
 	elseif args:IsSpellID(55593) then
-		if mod:IsDifficulty("normal10") then
+		if self:IsDifficulty("normal10") then
 			warnHealSoon:Schedule(14)
 			warnHealNow:Schedule(17)
 		else
@@ -84,6 +85,15 @@ function mod:SPELL_CAST_SUCCESS(args)
 			timerHealthy:Start(healthyTimer)
 		end
 		timerAura:Start(auraTimer)
+	end
+end
+
+function mod:UNIT_DIED(args)
+	if bit.band(args.destGUID:sub(0, 5), 0x00F) == 3 then
+		local guid = tonumber(args.destGUID:sub(9, 12), 16)
+		if guid == 500002 then -- Spore
+			warnHealNow:Show()
+		end
 	end
 end
 
