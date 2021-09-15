@@ -21,7 +21,10 @@ L:SetOptionLocalization({
 })
 
 L:SetMiscLocalization({
-	ArachnophobiaTimer	= "Arachnophobia"
+	ArachnophobiaTimer	= "Arachnophobia",
+	Yell1 				= "There is no way out.",
+	Yell2 				= "Just a little taste...",
+	Yell3 				= "Yes, run! It makes the blood pump faster!"
 })
 
 ----------------------------
@@ -41,6 +44,13 @@ L:SetWarningLocalization({
 L:SetOptionLocalization({
 	WarningEmbraceExpire	= "Show pre-warning for Widow's Embrace fade",
 	WarningEmbraceExpired	= "Show warning for Widow's Embrace fade"
+})
+
+L:SetMiscLocalization({
+	Yell1 	= "Run while you still can!",
+	Yell2 	= "You cannot hide from me!",
+	Yell3 	= "Kneel before me, worm!",
+	Yell4	= "Slay them in the master's name!"
 })
 
 ---------------
