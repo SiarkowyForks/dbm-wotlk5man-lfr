@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Gluth", "DBM-Naxx", 2)
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 4451 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4452 $"):sub(12, -3))
 mod:SetCreatureID(15932)
 mod:SetUsedIcons(7, 8)
 
