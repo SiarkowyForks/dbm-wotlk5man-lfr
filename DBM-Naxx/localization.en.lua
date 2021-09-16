@@ -92,8 +92,10 @@ L:SetGeneralLocalization({
 })
 
 L:SetWarningLocalization({
-	WarningTeleportNow	= "Teleported",
-	WarningTeleportSoon	= "Teleport in 20 seconds"
+	WarningTeleportNow				= "Teleported",
+	WarningTeleportSoon				= "Teleport in 20 seconds",
+	SpecialWarningEnragedSkeleton	= "Enraged Skeleton targets you",
+	WarningYellEnragedSkeleton		= "I'm targeted by Enraged Skeleton!"
 })
 
 L:SetTimerLocalization({
@@ -102,10 +104,13 @@ L:SetTimerLocalization({
 })
 
 L:SetOptionLocalization({
-	WarningTeleportNow	= "Show warning for Teleport",
-	WarningTeleportSoon	= "Show pre-warning for Teleport",
-	TimerTeleport		= "Show timer for Teleport",
-	TimerTeleportBack	= "Show timer for Teleport back"
+	WarningTeleportNow				= "Show warning for Teleport",
+	WarningTeleportSoon				= "Show pre-warning for Teleport",
+	WarningEnragedSkeleton			= "Yell on being targeted by Enraged Skeleton",
+	TimerTeleport					= "Show timer for Teleport",
+	TimerTeleportBack				= "Show timer for Teleport back",
+	SpecialWarningEnragedSkeleton	= "Show special warning when you are targeted by Enraged Skeleton",
+	SetIconOnEnragedSkeletonTarget	= "Set icon on Enraged Skeleton target"
 })
 
 --------------------------
@@ -142,18 +147,18 @@ L:SetGeneralLocalization({
 })
 
 L:SetWarningLocalization({
-	WarningHealSoon	= "Healing possible in 3 seconds",
-	WarningHealNow	= "Heal now",
+	WarningHealSoon			= "Healing possible in 3 seconds",
+	WarningHealNow			= "Heal now",
 	WarningHealthySporeSoon = "Healthy spore spawns in 3 seconds",
-	WarningHealthySporeNow = "Healthy spore spawned"
+	WarningHealthySporeNow 	= "Healthy spore spawned"
 })
 
 L:SetOptionLocalization({
-	WarningHealSoon		= "Show pre-warning for 3-second healing window",
-	WarningHealNow		= "Show warning for 3-second healing window",
+	WarningHealSoon			= "Show pre-warning for 3-second healing window",
+	WarningHealNow			= "Show warning for 3-second healing window",
 	WarningHealthySporeSoon	= "Show pre-warning for 3-second before Healthy spore spawns",
 	WarningHealthySporeNow	= "Show warning when Healthy spore spawns",
-	SporeDamageAlert	= "Send whisper to and announce to raid players who damage spores\n(requires announce to be enabled and leader/promoted status)"
+	SporeDamageAlert		= "Send whisper to and announce to raid players who damage spores\n(requires announce to be enabled and leader/promoted status)"
 })
 
 -----------------
