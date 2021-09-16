@@ -57,32 +57,32 @@ function mod:SPELL_AURA_APPLIED(args)
 		end
 		if self.Options.SetIconOnFleshRipTarget then
 			table.insert(fleshripIcons, args.destName)
-			addIcon()
+			addIcons()
 		end
 	end
 end
 
 function mod:SPELL_AURA_REMOVED(args)
-	if args:IsSpellID(40199) and self.Options.SetIconOnInjectionTarget then
-		removeIcon(args.destName)
+	if args:IsSpellID(40199) and self.Options.SetIconOnFleshRipTarget then
+		removeIcons(args.destName)
 	end
 end
 
-local function addIcon()
+local function addIcons()
 	for i,j in ipairs(fleshripIcons) do
 		local icon = 9 - i
 		mod:SetIcon(j, icon)
 	end
 end
 
-local function removeIcon(target)
+local function removeIcons(target)
 	for i,j in ipairs(fleshripIcons) do
 		if j == target then
 			table.remove(fleshripIcons, i)
 			mod:SetIcon(target, 0)
 		end
 	end
-	addIcon()
+	addIcons()
 end
 
 function mod:OnCombatEnd()
