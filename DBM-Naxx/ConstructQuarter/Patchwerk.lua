@@ -3,7 +3,7 @@ local L		= mod:GetLocalizedStrings()
 
 mod:SetRevision(("$Revision: 2869 $"):sub(12, -3))
 mod:SetCreatureID(16028)
-mod:SetUsedIcons(8)
+mod:SetUsedIcons(5, 6, 7, 8)
 
 mod:RegisterCombat("yell", L.yell1, L.yell2)
 
@@ -51,31 +51,31 @@ function mod:SPELL_AURA_APPLIED(args)
 		warnGrievousThrow:Show(args.destName)
 		if self.Options.SetIconOnGrievousThrowTarget then
 			table.insert(GrievousThrowIcons, args.destName)
-			addIcons()
+			aIcons()
 		end
 	end
 end
 
 function mod:SPELL_AURA_REMOVED(args)
 	if args:IsSpellID(43093) and self.Options.SetIconOnGrievousThrowTarget then
-		removeIcons(args.destName)
+		rIcons(args.destName)
 	end
 end
 
 
-local function addIcons()
+local function aIcons()
 	for i,j in ipairs(GrievousThrowIcons) do
 		local icon = 9 - i
 		mod:SetIcon(j, icon)
 	end
 end
 
-local function removeIcons(target)
+local function rIcons(target)
 	for i,j in ipairs(GrievousThrowIcons) do
 		if j == target then
 			table.remove(GrievousThrowIcons, i)
 			mod:SetIcon(target, 0)
 		end
 	end
-	addIcons()
+	aIcons()
 end
