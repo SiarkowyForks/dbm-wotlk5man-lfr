@@ -29,6 +29,23 @@ local function announceStrike(target, damage)
 	SendChatMessage(L.HatefulStrike:format(target, damage), "RAID")
 end
 
+local function aIcons()
+	for i,j in ipairs(GrievousThrowIcons) do
+		local icon = 9 - i
+		mod:SetIcon(j, icon)
+	end
+end
+
+local function rIcons(target)
+	for i,j in ipairs(GrievousThrowIcons) do
+		if j == target then
+			table.remove(GrievousThrowIcons, i)
+			mod:SetIcon(target, 0)
+		end
+	end
+	aIcons()
+end
+
 function mod:OnCombatStart(delay)
 	enrageTimer:Start(-delay)
 	timerAchieve:Start(-delay)
@@ -60,22 +77,4 @@ function mod:SPELL_AURA_REMOVED(args)
 	if args:IsSpellID(43093) and self.Options.SetIconOnGrievousThrowTarget then
 		rIcons(args.destName)
 	end
-end
-
-
-local function aIcons()
-	for i,j in ipairs(GrievousThrowIcons) do
-		local icon = 9 - i
-		mod:SetIcon(j, icon)
-	end
-end
-
-local function rIcons(target)
-	for i,j in ipairs(GrievousThrowIcons) do
-		if j == target then
-			table.remove(GrievousThrowIcons, i)
-			mod:SetIcon(target, 0)
-		end
-	end
-	aIcons()
 end
