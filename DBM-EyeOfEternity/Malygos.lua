@@ -8,7 +8,6 @@ mod:RegisterCombat("yell", L.YellPull)
 
 mod:RegisterEvents(
 	"CHAT_MSG_RAID_BOSS_EMOTE",
-	"SPELL_CAST_SUCCESS",
 	"CHAT_MSG_MONSTER_YELL",
 	"SPELL_AURA_APPLIED"
 )
@@ -52,18 +51,6 @@ function mod:CHAT_MSG_RAID_BOSS_EMOTE(msg)
 	end
 end
 
-function mod:SPELL_CAST_SUCCESS(args)
-	if args:IsSpellID(56105) then
-		timerVortexCD:Start()
-		warnVortexSoon:Schedule(54)
-		warnVortex:Show()
-		timerVortex:Start()
-		if timerSpark:GetTime() < 11 and timerSpark:IsStarted() then
-			timerSpark:Update(18, 30)
-		end
-	end
-end
-
 function mod:CHAT_MSG_MONSTER_YELL(msg)
 	if msg:sub(0, L.YellPhase2:len()) == L.YellPhase2 then
 		self:SendSync("Phase2")
@@ -94,6 +81,14 @@ function mod:SPELL_AURA_APPLIED(args)
 				specWarnSurge:Show()
 			end
 		end
+	elseif args:IsSpellID(55853) and args:IsPlayer() then
+		timerVortexCD:Start()
+		warnVortexSoon:Schedule(54)
+		warnVortex:Show()
+		timerVortex:Start()
+		if timerSpark:GetTime() < 11 and timerSpark:IsStarted() then
+			timerSpark:Update(18, 30)
+		end
 	end
 end
 
@@ -104,7 +99,7 @@ function mod:OnSync(event, arg)
 	elseif event == "Phase2" then
 		timerSpark:Stop()
 		timerVortexCD:Stop()
-		timerBreath:Start(92)
+		timerBreath:Start(67)
 	elseif event == "Breath" then
 		timerBreath:Schedule(1)
 		warnBreath:Schedule(1)
