@@ -18,7 +18,9 @@ local warnTeleportSoon	= mod:NewAnnounce("WarningTeleportSoon", 1, 46573)
 local warnCurse			= mod:NewSpellAnnounce(29213, 2)
 local warnParalyze		= mod:NewTargetAnnounce(38132, 2)
 local specWarnParalyze	= mod:NewSpecialWarning("SpecialWarningEnragedSkeleton")
+local warnBlinkSoon 	= mod:NewAnnounce("WarningBlinkSoon", 4, 29208)
 
+local timerBlink		= mod:NewTimer(39, "TimerBlink", 29208)
 local timerTeleport		= mod:NewTimer(90, "TimerTeleport", 46573)
 local timerTeleportBack	= mod:NewTimer(70, "TimerTeleportBack", 46573)
 
@@ -38,6 +40,8 @@ function mod:Balcony()
 	elseif phase == 2 then timer = 97
 	elseif phase == 3 then timer = 120
 	else return	end
+	timerBlink:Stop()
+	warnBlinkSoon:Cancel()
 	timerTeleportBack:Show(timer)
 	warnTeleportSoon:Schedule(timer - 20)
 	warnTeleportNow:Schedule(timer)
@@ -52,6 +56,8 @@ function mod:BackInRoom(delay)
 	elseif phase == 2 then timer = 110 - delay
 	elseif phase == 3 then timer = 180 - delay
 	else return end
+	timerBlink:Show()
+	warnBlinkSoon:Schedule(35 - delay)
 	timerTeleport:Show(timer)
 	warnTeleportSoon:Schedule(timer - 20)
 	warnTeleportNow:Schedule(timer)
@@ -61,6 +67,8 @@ end
 function mod:SPELL_CAST_SUCCESS(args)
 	if args:IsSpellID(29213, 54835) then	-- Curse of the Plaguebringer
 		warnCurse:Show()
+	elseif args:IsSpellID(29208) then
+		timerBlink:Show()
 	end
 end
 
@@ -76,11 +84,11 @@ function mod:SPELL_AURA_APPLIED(args)
 			self:SetIcon(args.destName, 8)
 		end
 		if args:IsPlayer() then
-			specWarnEnragedSkeleton:Show()
-		end
-		if self.Options.WarningEnragedSkeleton then
-			SendChatMessage(L.WarningYellEnragedSkeleton, "YELL")
-		end
-		warnParalyze:Show()
+			if self.Options.WarningEnragedSkeleton then
+				SendChatMessage(L.WarningYellEnragedSkeleton, "YELL")
+			end
+			specWarnParalyze:Show()
+		end 
+		warnParalyze:Show(args.destName)
 	end
 end

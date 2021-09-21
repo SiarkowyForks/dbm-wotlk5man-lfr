@@ -135,16 +135,12 @@ L:SetGeneralLocalization({
 
 L:SetWarningLocalization({
 	WarningHealSoon		= "Soins possibles dans 3 sec",
-	WarningHealNow		= "SOIGNEZ MAINTENANT!",
-	WarningHealthySporeSoon = "Des spores saines apparaissent en 3 secondes",
-	WarningHealthySporeNow = "Spore saine engendrée"
+	WarningHealNow		= "SOIGNEZ MAINTENANT!"
 })
 
 L:SetOptionLocalization({
 	WarningHealSoon		= "Activer l'avertissement \"Soins dans 3 sec\" ",
-	WarningHealNow		= "Activer l'avertissement \"SOIGNEZ MAINTENANT\" ",
-	WarningHealthySporeSoon	= "Afficher un avertissement pendant 3 secondes avant que des spores saines n'apparaissent",
-	WarningHealthySporeNow	= "Afficher un avertissement lorsque des spores saines apparaissent"
+	WarningHealNow		= "Activer l'avertissement \"SOIGNEZ MAINTENANT\" "
 })
 
 -----------------
@@ -268,20 +264,16 @@ L:SetGeneralLocalization({
 L:SetOptionLocalization({
 	TimerWave			= "Afficher le timer des vagues",
 	TimerPhase2			= "Afficher le timer pour la Phase 2",
-	TimerTeleport		= "Activer le timer pour la téléporation",
 	WarningWaveSoon		= "Activer le pré-avertissement pour les Vagues",
 	WarningWaveSpawned	= "Avertir quand une vague est arrivée",
 	WarningRiderDown	= "Avertir quand un Cavalier meurt",
 	WarningKnightDown	= "Avertir quand un Chevalier meurt",
-	WarningTraineeDown	= "Avertir quand un Stagiaire meurt"
-	WarningPhase2		= "Activer l'avertissement pour la Phase 2",
-	WarningTeleportSoon	= "Activer le pré-avertissement pour la téléporation"
+	WarningPhase2		= "Activer l'avertissement pour la Phase 2"
 })
 
 L:SetTimerLocalization({
 	TimerWave			= "Vague #%d",
-	TimerPhase2			= "Phase 2",
-	TimerTeleport		= "Téléportation"
+	TimerPhase2			= "Phase 2"
 })
 
 L:SetWarningLocalization({
@@ -289,9 +281,7 @@ L:SetWarningLocalization({
 	WarningWaveSpawned	= "Vague %d: %s arrivée",
 	WarningRiderDown	= "Cavalier down",
 	WarningKnightDown	= "Chevalier down",
-	WarningTraineeDown	= "Stagiaire down",
-	WarningPhase2		= "Phase 2",
-	WarningTeleportSoon	= "Téléportation dans in 3 sec"
+	WarningPhase2		= "Phase 2"
 })
 
 L:SetMiscLocalization({
