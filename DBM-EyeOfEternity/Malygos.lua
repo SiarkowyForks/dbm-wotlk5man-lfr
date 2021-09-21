@@ -1,7 +1,7 @@
 local mod	= DBM:NewMod("Malygos", "DBM-EyeOfEternity")
 local L		= mod:GetLocalizedStrings()
 
-mod:SetRevision(("$Revision: 4451 $"):sub(12, -3))
+mod:SetRevision(("$Revision: 4458 $"):sub(12, -3))
 mod:SetCreatureID(28859)
 
 mod:RegisterCombat("yell", L.YellPull)
