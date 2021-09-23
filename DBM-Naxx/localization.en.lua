@@ -95,18 +95,22 @@ L:SetWarningLocalization({
 	WarningTeleportNow				= "Teleported",
 	WarningTeleportSoon				= "Teleport in 20 seconds",
 	SpecialWarningEnragedSkeleton	= "Enraged Skeleton targets you",
-	WarningYellEnragedSkeleton		= "I'm targeted by Enraged Skeleton!"
+	WarningEnragedSkeleton			= "I'm targeted by Enraged Skeleton!",
+	WarningBlinkSoon				= "Threat reset soon"
 })
 
 L:SetTimerLocalization({
 	TimerTeleport		= "Teleport",
-	TimerTeleportBack	= "Teleport back"
+	TimerTeleportBack	= "Teleport back",
+	TimerBlink			= "Blink"
 })
 
 L:SetOptionLocalization({
 	WarningTeleportNow				= "Show warning for Teleport",
 	WarningTeleportSoon				= "Show pre-warning for Teleport",
 	WarningEnragedSkeleton			= "Yell on being targeted by Enraged Skeleton",
+	WarningBlinkSoon				= "Show warning for Blink",
+	TimerBlink						= "Show timer for Blink",
 	TimerTeleport					= "Show timer for Teleport",
 	TimerTeleportBack				= "Show timer for Teleport back",
 	SpecialWarningEnragedSkeleton	= "Show special warning when you are targeted by Enraged Skeleton",

@@ -273,7 +273,7 @@ L:SetOptionLocalization({
 	WarningWaveSpawned	= "Avertir quand une vague est arrivée",
 	WarningRiderDown	= "Avertir quand un Cavalier meurt",
 	WarningKnightDown	= "Avertir quand un Chevalier meurt",
-	WarningTraineeDown	= "Avertir quand un Stagiaire meurt"
+	WarningTraineeDown	= "Avertir quand un Stagiaire meurt",
 	WarningPhase2		= "Activer l'avertissement pour la Phase 2",
 	WarningTeleportSoon	= "Activer le pré-avertissement pour la téléporation"
 })
@@ -347,10 +347,10 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
-	WarningAirPhaseSoon	= "Activer le pré-avertissement de la phase en vol",
-	WarningAirPhaseNow	= "Activer l'avertissement de la phase en vol",
+	WarningAirPhaseSoon		= "Activer le pré-avertissement de la phase en vol",
+	WarningAirPhaseNow		= "Activer l'avertissement de la phase en vol",
 	WarningLanded		    = "Activer l'avertissement pour la phase au sol",
-	TimerAir			    	= "Afficher le timer de la phase en vol",
+	TimerAir			   	= "Afficher le timer de la phase en vol",
 	TimerLanding		   	= "Afficher le timer de l'atterrissage",
 	TimerIceBlast		   	= "Afficher le timer du Souffle de givre",
 	WarningDeepBreath		= "Activer l'avertissement spécial pour le Souffle de givre",
@@ -359,14 +359,14 @@ L:SetOptionLocalization({
 
 L:SetMiscLocalization({
 	EmoteBreath			    = "prend une grande inspiration",
-	WarningYellIceblock	= "Je suis un bloc de glace !"
+	WarningYellIceblock		= "Je suis un bloc de glace !"
 })
 
 L:SetWarningLocalization({
 	WarningAirPhaseSoon	= "Envol dans 10 sec",
 	WarningAirPhaseNow	= "Dans les airs",
-	WarningLanded		    = "Atterrissage de Sapphiron",
-	WarningDeepBreath	  = "Souffle de givre !"
+	WarningLanded		= "Atterrissage de Sapphiron",
+	WarningDeepBreath	= "Souffle de givre !"
 })
 
 L:SetTimerLocalization({
