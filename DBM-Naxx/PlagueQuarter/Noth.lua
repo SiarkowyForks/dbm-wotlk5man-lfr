@@ -56,8 +56,8 @@ function mod:BackInRoom(delay)
 	elseif phase == 2 then timer = 110 - delay
 	elseif phase == 3 then timer = 180 - delay
 	else return end
-	timerBlink:Show(-delay)
-	warnBlinkSoon:Schedule(35 - delay)
+	timerBlink:Show(20 - delay)
+	warnBlinkSoon:Schedule(20 - delay)
 	timerTeleport:Show(timer)
 	warnTeleportSoon:Schedule(timer - 20)
 	warnTeleportNow:Schedule(timer)
@@ -67,7 +67,10 @@ end
 function mod:SPELL_CAST_SUCCESS(args)
 	if args:IsSpellID(29213, 54835) then	-- Curse of the Plaguebringer
 		warnCurse:Show()
-	elseif args:IsSpellID(29208) then
+	elseif args:IsSpellID(29208, 29209, 29210, 29211) then
+		if timerBlink:IsStarted() then
+			timerBlink:Update(39)
+		end
 		timerBlink:Show()
 	end
 end
