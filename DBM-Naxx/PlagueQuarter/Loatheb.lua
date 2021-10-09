@@ -41,15 +41,14 @@ function mod:OnCombatStart(delay)
 	if self:IsDifficulty("heroic25") then
 		sporeTimer = 18
 		doomTimer = 90
-		timerAura:Start(17 - delay)
 		timerHealthy:Start(auraTimer + 8 - delay)
 		timerDoom:Start(30 - delay, doomCounter + 1)
 	else
 		sporeTimer = 36
 		doomTimer = 120
-		timerAura:Start(17 - delay)
 		timerDoom:Start(120 - delay, doomCounter + 1)
 	end
+	timerAura:Start(17 - delay)
 	timerSpore:Start(sporeTimer - delay)
 	warnSporeSoon:Schedule(sporeTimer - 5 - delay)
 end
