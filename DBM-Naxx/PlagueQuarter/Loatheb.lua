@@ -26,31 +26,29 @@ local warnHealthyNow 	= mod:NewAnnounce("WarningHealthySporeNow", 4, 35336)
 local timerHealthy 	= mod:NewNextTimer(15, 35336)
 local timerSpore	= mod:NewNextTimer(36, 32329)
 local timerDoom		= mod:NewNextTimer(180, 29204)
-local timerAura		= mod:NewBuffActiveTimer(17, 55593)
+local timerAura		= mod:NewBuffActiveTimer(15, 55593)
 
 mod:AddBoolOption("SporeDamageAlert", false)
 
 local healthyTimer 	= 6
 local doomCounter	= 0
 local sporeTimer	= 36
-local auraTimer		= 17
+local auraTimer		= 15
 local doomTimer		= 120
 
 function mod:OnCombatStart(delay)
 	doomCounter = 0
 	if self:IsDifficulty("heroic25") then
 		sporeTimer = 18
-		auraTimer = 15
 		doomTimer = 90
-		timerAura:Start(auraTimer + 2 - delay)
 		timerHealthy:Start(auraTimer + 8 - delay)
 		timerDoom:Start(30 - delay, doomCounter + 1)
 	else
 		sporeTimer = 36
-		auraTimer = 17
 		doomTimer = 120
 		timerDoom:Start(120 - delay, doomCounter + 1)
 	end
+	timerAura:Start(17 - delay)
 	timerSpore:Start(sporeTimer - delay)
 	warnSporeSoon:Schedule(sporeTimer - 5 - delay)
 end
@@ -76,13 +74,13 @@ function mod:SPELL_CAST_SUCCESS(args)
 		warnDoomNow:Show(doomCounter)
 		timerDoom:Start(timer, doomCounter + 1)
 	elseif args:IsSpellID(55593) then
-		if self:IsDifficulty("normal10") then
-			warnHealSoon:Schedule(14)
-			warnHealNow:Schedule(17)
-		else
+		if self:IsDifficulty("heroic25") then
 			warnHealthySoon:Schedule(healthyTimer - 3)
 			warnHealthyNow:Schedule(healthyTimer)
 			timerHealthy:Start(healthyTimer)
+		else
+			warnHealSoon:Schedule(14)
+			warnHealNow:Schedule(17)
 		end
 		timerAura:Start(auraTimer)
 	end
