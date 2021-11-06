@@ -114,7 +114,7 @@ end
 
 function mod:RangeToggle(show)
 	if show then
-		DBM.RangeCheck:Show(10)
+		DBM.RangeCheck:Show(12)
 	else
 		DBM.RangeCheck:Hide()
 	end
