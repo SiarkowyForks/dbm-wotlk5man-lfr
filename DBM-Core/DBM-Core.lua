@@ -41,7 +41,7 @@
 -------------------------------
 --  Globals/Default Options  --
 -------------------------------
-DBM_REVISION = "$Revision: 4462 $"
+DBM_REVISION = "$Revision: 4463 $"
 
 DBM = {
 	Revision = DBM_REVISION:sub(12, -3),
