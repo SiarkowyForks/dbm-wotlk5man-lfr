@@ -41,7 +41,7 @@ function mod:OnCombatStart(delay)
 	specwarnP2Soon:Schedule(215-delay)
 	timerPhase2:Start()
 	warnPhase2:Schedule(225)
-	self:Schedule(225, DBM.RangeCheck.Show, DBM.RangeCheck, 10)
+	self:Schedule(225, DBM.RangeCheck.Show, DBM.RangeCheck, 12)
 end
 
 function mod:OnCombatEnd()
@@ -103,7 +103,7 @@ end
 
 function mod:RangeToggle(show)
 	if show then
-		DBM.RangeCheck:Show(10)
+		DBM.RangeCheck:Show(12)
 	else
 		DBM.RangeCheck:Hide()
 	end
