@@ -37,17 +37,19 @@ jobs:
           sed -i "s/Revision: \([0-9]\+\)/Revision: ${NEW_REVISION}/g" "DBM-Core/DBM-Core.lua"
 
       - name: Commit Revision
+        id: commit_bump
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "chore: Bump revision [skip ci]"
 
       - name: Tag Release
         id: tag_release
-        uses: mathieudutour/github-tag-action@v5.6
+        uses: Siarkowy/github-tag-action@feature/commit_sha
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_branches: ".*"  # drop branch suffix
           custom_release_rules: feat:patch,fix:patch
+          commit_sha: ${{ steps.commit_bump.outputs.commit_hash }}
 
       - name: Update Env
         run: |
